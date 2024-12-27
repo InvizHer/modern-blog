@@ -13,6 +13,10 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,6 +24,23 @@
     <!-- Include existing styles from home page -->
     <style>
         /* Include all styles from home page */
+
+        body{
+            font-family: "Lexend", serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+  /* Styles for devices with a screen width of 768px or less */
+  p, a {
+    font-size: 16px;
+  }
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+}
 
         /* Modern Scrollbar */
         ::-webkit-scrollbar {
@@ -360,7 +381,7 @@
             </div>
 
             <!-- Posts Grid -->
-            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
+            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto px-2">
                 <!-- Posts will be populated by JavaScript -->
             </div>
 
