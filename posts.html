@@ -33,7 +33,7 @@
 
         @media screen and (max-width: 768px) {
   /* Styles for devices with a screen width of 768px or less */
-  p, a {
+  p {
     font-size: 16px;
   }
 
@@ -134,20 +134,14 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.515);
         }
-        /* styles specific to posts page */
-        
-        .post-skeleton {
-            animation: skeleton-loading 1s linear infinite alternate;
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
-        @keyframes skeleton-loading {
-            0% {
-                background-color: rgba(156, 163, 175, 0.1);
-            }
-            100% {
-                background-color: rgba(156, 163, 175, 0.2);
-            }
-        }
+
 
         /* Add these styles to your existing CSS */
 .post-card {
@@ -155,7 +149,15 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
+
+.post-card:hover {
+            border-color: #3B82F6;
+            transform: translateY(-5px);
+        }
 
 .post-card .content {
     flex: 1;
@@ -279,13 +281,13 @@
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
-                    <div class="flex items-center space-x-4">
+                    <a href=".." class="flex items-center space-x-4">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
                             <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold gradient-text">InvizHer</span>
-                    </div>
+                    </a>
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-8">
@@ -483,39 +485,6 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
             }
         });
 
-        // Intersection Observer for Animations
-        const animateOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.post-card, .category-card').forEach(element => {
-            animateOnScroll.observe(element);
-        });
-
-        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-        
-        const scrollRevealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    scrollRevealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        scrollRevealElements.forEach(element => {
-            scrollRevealObserver.observe(element);
-        });
-
 // ======================= // posts page functions // ================= //
         // Constants
         // Constants
@@ -652,12 +621,12 @@ function filterPosts() {
 // Create post card HTML
 function createPostCard(post) {
     return `
-        <article class="post-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all hover:shadow-xl">
+        <article class="post-card bg-white rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-xl">
             <div class="relative overflow-hidden aspect-video">
                 <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
                     <div class="absolute bottom-4 left-4 flex gap-2">
-                        <span class="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
+                        <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm rounded-full">
                             ${post.category}
                         </span>
                         <span class="date-badge px-3 py-1 text-white text-sm rounded-full">
