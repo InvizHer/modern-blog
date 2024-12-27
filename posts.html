@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts | Modern Blog</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Explore our collection of thought-provoking articles on technology, lifestyle, and design.">
+    <meta name="keywords" content="blog posts, articles, technology, lifestyle, design, programming">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ModernBlog Team">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Include existing styles from home page -->
+    <style>
+        /* Include all styles from home page */
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .animate-scale {
+            animation: scale 3s ease-in-out infinite;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .slide-down {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        /* Modern Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.19);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.515);
+        }
+        /* styles specific to posts page */
+        
+        .post-skeleton {
+            animation: skeleton-loading 1s linear infinite alternate;
+        }
+        
+        @keyframes skeleton-loading {
+            0% {
+                background-color: rgba(156, 163, 175, 0.1);
+            }
+            100% {
+                background-color: rgba(156, 163, 175, 0.2);
+            }
+        }
+
+        /* Add these styles to your existing CSS */
+.post-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Update category pills responsiveness */
+.category-pill {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .category-pill {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.813rem;
+    }
+}
+        
+        .post-card .date-badge {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        
+        .category-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill.active {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            color: white;
+        }
+        
+        .search-clear {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .search-input:not(:placeholder-shown) + .search-clear {
+            opacity: 1;
+        }
+
+        /* Add to your CSS */
+@media (max-width: 640px) {
+    #pagination button {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    #pagination .page-number {
+        display: none;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <nav class="glass mx-4 my-4 rounded-2xl">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Connect
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="glass mx-4 mt-2 p-6 rounded-2xl">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="pt-28">
+        <div class="container mx-auto px-4 mb-14 max-w-7xl">
+
+                    <!-- Add after header, before main -->
+<div class="container mx-auto px-4">
+    <div class="text-center py-8">
+        <h1 class="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Discover Amazing Content</h1>
+        <p class="text-gray-600">Explore our collection of thoughtfully curated articles</p>
+    </div>
+</div>
+            <!-- Search and Filter Section -->
+            <div class="mx-auto max-w-4xl mb-8">
+                <div class="rounded-2xl p-4 md:p-6 mb-6">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <!-- Search Bar -->
+                        <div class="relative flex-1">
+                            <input
+                                type="text"
+                                id="searchInput"
+                                class="search-input w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                                placeholder="Search posts..."
+                            >
+                            <button 
+                                id="clearSearch"
+                                class="search-clear absolute right-12 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                            >
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="mt-4 flex flex-wrap gap-2" id="categoryFilters">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Grid -->
+            <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
+                <!-- Posts will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center" id="pagination">
+                <!-- Pagination will be populated by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-12">
+                <div class="text-gray-500">
+                    <i class="fas fa-search text-4xl mb-4"></i>
+                    <p class="text-xl">No posts found matching your criteria</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold">InvizHer</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 ModernBlog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+// ======================= // home page functions // ================= //
+// Mobile Menu Toggle with Animation
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('slide-down');
+                mobileMenu.classList.remove('slide-up');
+            } else {
+                mobileMenu.classList.add('slide-up');
+                mobileMenu.classList.remove('slide-down');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        // Intersection Observer for Animations
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.post-card, .category-card').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    scrollRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        scrollRevealElements.forEach(element => {
+            scrollRevealObserver.observe(element);
+        });
+
+// ======================= // posts page functions // ================= //
+        // Constants
+        // Constants
+const POSTS_PER_PAGE = 6;
+let currentPage = 1;
+let currentCategory = 'All';
+let currentSearchTerm = '';
+let allPosts = [];
+let filteredPosts = [];
+
+// Fetch posts data
+async function fetchPosts() {
+    try {
+        const response = await fetch('/posts.json');
+        const data = await response.json();
+        allPosts = data.posts;
+        initializeCategories(data.categories);
+        updatePosts();
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+    }
+}
+
+// Initialize category filters
+function initializeCategories(categories) {
+    const categoryFilters = document.getElementById('categoryFilters');
+    categories.forEach(category => {
+        const pill = document.createElement('button');
+        pill.className = `category-pill px-4 py-2 rounded-full glass hover:border-blue-500 transition-all ${category === 'All' ? 'active' : ''}`;
+        pill.textContent = category;
+        pill.addEventListener('click', () => handleCategoryChange(category));
+        categoryFilters.appendChild(pill);
+    });
+}
+
+// Handle category change
+function handleCategoryChange(category) {
+    currentCategory = category;
+    currentPage = 1;
+    updateCategoryPills();
+    updatePosts();
+}
+
+// Update category pills UI
+function updateCategoryPills() {
+    document.querySelectorAll('.category-pill').forEach(pill => {
+        if (pill.textContent === currentCategory) {
+            pill.classList.add('active');
+        } else {
+            pill.classList.remove('active');
+        }
+    });
+}
+
+// Filter and search posts
+function filterPosts() {
+    filteredPosts = allPosts.filter(post => {
+        const matchesCategory = currentCategory === 'All' || post.category === currentCategory;
+        const matchesSearch = post.title.toLowerCase().includes(currentSearchTerm.toLowerCase()) ||
+                           post.description.toLowerCase().includes(currentSearchTerm.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
+}
+
+// Create post card HTML
+function createPostCard(post) {
+    return `
+        <article class="post-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all hover:shadow-xl">
+            <div class="relative overflow-hidden aspect-video">
+                <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+                    <div class="absolute bottom-4 left-4 flex gap-2">
+                        <span class="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
+                            ${post.category}
+                        </span>
+                        <span class="date-badge px-3 py-1 text-white text-sm rounded-full">
+                            ${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 hover:text-blue-500 transition-colors line-clamp-2">
+                    <a href="/post/${post.slug}">${post.title}</a>
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">${post.description}</p>
+            </div>
+        </article>
+    `;
+}
+
+// Create skeleton loader
+function createSkeletonLoader() {
+    return `
+        <div class="post-skeleton bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div class="aspect-video bg-gray-200"></div>
+            <div class="p-6">
+                <div class="h-6 bg-gray-200 rounded mb-3"></div>
+                <div class="h-4 bg-gray-200 rounded mb-2"></div>
+                <div class="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
+                <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+            </div>
+        </div>
+    `;
+}
+
+// Update posts display
+async function updatePosts() {
+    const postsGrid = document.getElementById('postsGrid');
+    const noResults = document.getElementById('noResults');
+    
+    // Show skeleton loaders
+    postsGrid.innerHTML = Array(POSTS_PER_PAGE).fill(createSkeletonLoader()).join('');
+    
+    // Filter posts
+    filterPosts();
+    
+    // Simulate loading delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+    
+    // Update UI
+    if (paginatedPosts.length === 0) {
+        postsGrid.innerHTML = '';
+        noResults.classList.remove('hidden');
+    } else {
+        noResults.classList.add('hidden');
+        postsGrid.innerHTML = paginatedPosts.map(post => createPostCard(post)).join('');
+        observeNewPosts();
+    }
+    
+    updatePagination(totalPages);
+}
+
+// Update pagination controls
+function updatePagination(totalPages) {
+    const pagination = document.getElementById('pagination');
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = `
+        <div class="flex gap-2">
+            <button
+                class="px-4 py-2 rounded-lg border border-gray-200 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:border-blue-500'}"
+                ${currentPage === 1 ? 'disabled' : ''}
+                onclick="handlePageChange(${currentPage - 1})"
+            >
+                <i class="fas fa-chevron-left"></i>
+            </button>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            paginationHTML += `
+                <button
+                    class="px-4 py-2 rounded-lg border ${i === currentPage ? 'bg-blue-500 text-white' : 'border-gray-200 hover:border-blue-500'}"
+                    onclick="handlePageChange(${i})"
+                >
+                    ${i}
+                </button>
+            `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += `<span class="px-4 py-2">...</span>`;
+        }
+    }
+
+    paginationHTML += `
+        <button
+            class="px-4 py-2 rounded-lg border border-gray-200 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:border-blue-500'}"
+            ${currentPage === totalPages ? 'disabled' : ''}
+            onclick="handlePageChange(${currentPage + 1})"
+        >
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    `;
+
+    pagination.innerHTML = paginationHTML;
+}
+
+// Handle page change
+function handlePageChange(page) {
+    currentPage = page;
+    updatePosts();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize search functionality
+const searchInput = document.getElementById('searchInput');
+const clearSearch = document.getElementById('clearSearch');
+
+searchInput.addEventListener('input', (e) => {
+    currentSearchTerm = e.target.value;
+    currentPage = 1;
+    updatePosts();
+    searchInput.classList[currentSearchTerm ? 'add' : 'remove']('has-value');
+});
+
+clearSearch.addEventListener('click', () => {
+    searchInput.value = '';
+    currentSearchTerm = '';
+    currentPage = 1;
+    updatePosts();
+    searchInput.focus();
+});
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', fetchPosts);
+
+// Header scroll effect
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('py-2');
+        return;
+    }
+    
+    if (currentScroll > lastScroll) {
+        header.classList.add('-translate-y-full');
+    } else {
+        header.classList.remove('-translate-y-full');
+    }
+    
+    if (currentScroll > 100) {
+        header.classList.add('py-2');
+    } else {
+        header.classList.remove('py-2');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Intersection Observer for post card animations
+const animateOnScrollNew= new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+// Update observer when posts are loaded
+function observeNewPosts() {
+    document.querySelectorAll('.post-card').forEach(card => {
+        animateOnScrollNew.observe(card);
+    });
+}
+
+    </script>
+</body>
+</html>

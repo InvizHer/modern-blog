@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding the Impact of AI on Software Development | Modern Blog</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Explore how artificial intelligence is revolutionizing software development practices, improving efficiency, and shaping the future of coding. Learn about key AI trends and their impact.">
+    <meta name="keywords" content="AI in software development, artificial intelligence coding, AI programming tools, future of software development, AI automation in coding">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Sarah Johnson">
+    <link rel="canonical" href="https://yourdomain.com/articles/ai-impact-software-development">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Understanding the Impact of AI on Software Development">
+    <meta property="og:description" content="Explore how artificial intelligence is revolutionizing software development practices, improving efficiency, and shaping the future of coding.">
+    <meta property="og:image" content="https://yourdomain.com/articles/ai-impact-header.jpg">
+    <meta property="og:url" content="https://yourdomain.com/articles/ai-impact-software-development">
+    <meta property="article:published_time" content="2024-12-25">
+    <meta property="article:author" content="Sarah Johnson">
+    <meta property="article:section" content="Technology">
+    <meta property="article:tag" content="Artificial Intelligence, Software Development, Programming">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Understanding the Impact of AI on Software Development">
+    <meta name="twitter:description" content="Explore how artificial intelligence is revolutionizing software development practices, improving efficiency, and shaping the future of coding.">
+    <meta name="twitter:image" content="https://yourdomain.com/articles/ai-impact-header.jpg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Include the same styles from home page -->
+    <style>
+        /* [Previous styles from home page remain the same] */
+
+        body{
+            font-family: "Lexend", serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+  /* Styles for devices with a screen width of 768px or less */
+  p, a {
+    font-size: 16px;
+  }
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+}
+
+
+         /* Modern Scrollbar */
+         ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .animate-scale {
+            animation: scale 3s ease-in-out infinite;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .slide-down {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        /* Modern Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.19);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.515);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Custom Shapes */
+        .blob {
+            border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+        }
+
+        /* Container Max Width */
+        .container {
+            max-width: 1280px !important;
+        }
+        
+        /* Additional Article-specific styles */
+
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1F2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.25rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content img {
+            border-radius: 1rem;
+            margin: 2.5rem 0;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #3B82F6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #4B5563;
+        }
+        
+        .article-content pre {
+            background-color: #F3F4F6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        .article-content code {
+            font-family: monospace;
+            background-color: #F3F4F6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: #6B7280;
+            transition: all 0.3s ease;
+        }
+        
+        .toc-link:hover {
+            color: #3B82F6;
+            transform: translateX(4px);
+        }
+        
+        .toc-link.active {
+            color: #3B82F6;
+            font-weight: 600;
+        }
+
+        /* Share Button Animation */
+        .share-button {
+            transition: all 0.3s ease;
+        }
+        
+        .share-button:hover {
+            transform: translateY(-2px);
+        }
+        
+
+        /* Gradient Text Effect */
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .toc-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #4B5563;
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.toc-link.active {
+    border-left-color: #6366f1;
+    background-color: #F3F4F6;
+    color: #6366f1;
+}
+
+/* Mobile TOC Styles */
+.floating-toc {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-toc.visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .floating-toc.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, 100%);
+    }
+
+
+.glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes fade-out-down {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.fade-out-down {
+    animation: fade-out-down 0.3s ease-out forwards;
+}
+        
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+    <!-- [Header from home page remains the same] -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <nav class="glass mx-4 my-4 rounded-2xl">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Connect
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32">
+        <!-- Article Header -->
+        <header class="container mx-auto px-4 max-w-4xl mb-12">
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
+                <div class="absolute inset-0 bg-black opacity-20"></div>
+                <div class="relative z-10">
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <span class="inline-flex items-center px-3 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm">
+                            <i class="fas fa-microchip mr-2"></i>Technology
+                        </span>
+                        <span class="inline-flex items-center px-3 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm">
+                            <i class="far fa-clock mr-2"></i>8 min read
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">Understanding the Impact of AI on Software Development</h1>
+                    
+                    <div class="flex items-center gap-4">
+                        <img src="https://thumbs.dreamstime.com/z/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg?w=768" alt="Sarah Johnson" class="w-12 h-12 rounded-full ring-2 ring-white/50">
+                        <div>
+                            <div class="font-medium text-lg">Sarah Johnson</div>
+                            <div class="text-white/80">December 25, 2024</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto">
+                <!-- Table of Contents - Desktop -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="sticky top-24 p-6 bg-white rounded-xl shadow-sm">
+                        <h4 class="font-semibold mb-4 text-gray-900">Table of Contents</h4>
+                        <nav class="space-y-2" id="desktop-toc">
+                            <a href="#introduction" class="toc-link hover:bg-gray-50 rounded-md">Introduction</a>
+                            <a href="#current-state" class="toc-link hover:bg-gray-50 rounded-md">Current State of AI</a>
+                            <a href="#one" class="toc-link hover:bg-gray-50 rounded-md">One</a>
+                            <a href="#two" class="toc-link hover:bg-gray-50 rounded-md">Two</a>
+                            <a href="#three" class="toc-link hover:bg-gray-50 rounded-md">Three</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Article Content -->
+                <article class="lg:col-span-8">
+                    <div class="article-content px-2">
+                        <section id="introduction">
+                            <p>
+                                Artificial Intelligence (AI) is revolutionizing the software development landscape, 
+                                transforming how developers work and how applications are built. This article explores 
+                                the profound impact AI is having on software development practices, tools, and methodologies.
+                            </p>
+
+                            
+                <img src="https://media.istockphoto.com/id/1370772148/photo/track-and-mountains-in-valle-del-lago-somiedo-nature-park-asturias-spain.jpg?s=612x612&w=0&k=20&c=QJn62amhOddkJSbihcjWKHXShMAfcKM0hPN65aCloco=" alt="AI and Software Development" class="rounded-2xl shadow-xl w-full">
+                        </section>
+
+                        <section id="current-state">
+                            <h2>Current State of AI in Development</h2>
+                            <p>
+                                Today's software development practices are increasingly augmented by AI-powered tools 
+                                and systems. From code completion to automated testing, AI is becoming an integral part 
+                                of the development workflow.
+                            </p>
+                            <img src="html.jpg" alt="AI Development Tools" class="my-8">
+                        </section>
+
+                        <section id="one">
+                            <h2>Current State of AI in Development</h2>
+                            <p>
+                                Today's software development practices are increasingly augmented by AI-powered tools 
+                                and systems. From code completion to automated testing, AI is becoming an integral part 
+                                of the development workflow.
+                            </p>
+                            <img src="html.jpg" alt="AI Development Tools" class="my-8">
+                        </section>
+
+                        <section id="two">
+                            <h2>Current State of AI in Development</h2>
+                            <p>
+                                Today's software development practices are increasingly augmented by AI-powered tools 
+                                and systems. From code completion to automated testing, AI is becoming an integral part 
+                                of the development workflow.
+                            </p>
+                            <img src="html.jpg" alt="AI Development Tools" class="my-8">
+                        </section>
+
+                        <section id="three">
+                            <h2>Current State of AI in Development</h2>
+                            <p>
+                                Today's software development practices are increasingly augmented by AI-powered tools 
+                                and systems. From code completion to automated testing, AI is becoming an integral part 
+                                of the development workflow.
+                            </p>
+                            <img src="html.jpg" alt="AI Development Tools" class="my-8">
+                        </section>
+
+                        <!-- [Additional sections with content] -->
+
+                        <!-- Code Example -->
+                        <div class="bg-gray-900 text-gray-100 rounded-xl p-6 my-8">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm text-gray-400">Example Code</span>
+                                <button class="text-sm text-gray-400 hover:text-white transition-colors">
+                                    <i class="far fa-copy mr-2"></i>Copy
+                                </button>
+                            </div>
+                            <pre class="text-sm"><code>
+// AI-assisted code generation example
+function analyzeCode(codeString) {
+    const ai = new AICodeAnalyzer();
+    return ai.analyze(codeString)
+        .then(suggestions => {
+            return suggestions.filter(s => s.confidence > 0.8);
+        });
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Article Footer -->
+                    <footer class="mt-12 border-t border-b border-gray-300 pt-8">
+
+                        <!-- Share Options -->
+                        <!-- Replace the existing Share Options section with this modern version -->
+<div class="space-y-8 mb-12">
+    <h3 class="text-md font-semibold text-gray-800">Share this via :</h3>
+    
+    <!-- Social Share Buttons Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-2">
+        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
+            <i class="fab fa-whatsapp text-xl text-green-500"></i>
+            <span class="text-gray-700 text-sm lg:text-md font-medium">WhatsApp</span>
+        </button>
+        
+        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
+            <i class="fab fa-telegram text-xl text-blue-500"></i>
+            <span class="text-gray-700 text-sm lg:text-md font-medium">Telegram</span>
+        </button>
+        
+        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
+            <i class="fab fa-twitter text-xl text-blue-400"></i>
+            <span class="text-gray-700 text-sm lg:text-md font-medium">Twitter</span>
+        </button>
+        
+        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
+            <i class="far fa-envelope text-xl text-gray-600"></i>
+            <span class="text-gray-700 text-sm lg:text-md font-medium">Email</span>
+        </button>
+    </div>
+
+    <!-- Copy Link Section -->
+    <div class="mt-6">
+        <div class="flex items-stretch gap-3 px-2">
+            <div class="flex-1 relative">
+                <input 
+                    type="text" 
+                    id="pageUrl" 
+                    class="w-full px-4 py-3 glass text-sm lg:text-md rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    readonly
+                >
+            </div>
+            <button 
+                id="copyButton"
+                class="flex items-center gap-2 text-sm lg:text-md px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:bg-gray-800 transition-all duration-300"
+            >
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Copy Success Alert -->
+<div id="copyAlert" class="hidden fixed bottom-6 left-2/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-check"></i>
+        <span>Link copied to clipboard!</span>
+    </div>
+</div>
+
+                    </footer>
+                </article>
+    </main>
+
+    <!-- Mobile TOC -->
+    <div class="floating-toc glass-morphism lg:hidden p-4" id="mobile-toc">
+        <div class="flex items-center justify-between mb-2">
+            <h4 class="font-medium text-gray-900" id="current-section">Introduction</h4>
+            <span class="text-sm text-gray-500" id="reading-progress">0% read</span>
+        </div>
+        <div class="h-1 bg-gray-200 rounded-full">
+            <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" id="progress-indicator" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- [Footer from home page remains the same] -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold">InvizHer</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 ModernBlog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+
+        // Mobile Menu Toggle with Animation
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('slide-down');
+                mobileMenu.classList.remove('slide-up');
+            } else {
+                mobileMenu.classList.add('slide-up');
+                mobileMenu.classList.remove('slide-down');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('py-2');
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                header.classList.add('-translate-y-full');
+            } else {
+                header.classList.remove('-translate-y-full');
+            }
+            
+            if (currentScroll > 100) {
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('py-2');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for Animations
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.post-card, .category-card').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const scrollRevealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    scrollRevealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        scrollRevealElements.forEach(element => {
+            scrollRevealObserver.observe(element);
+        });
+
+
+        //share section
+        // Copy URL functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const pageUrl = window.location.href;
+    const urlInput = document.getElementById('pageUrl');
+    const copyButton = document.getElementById('copyButton');
+    const copyAlert = document.getElementById('copyAlert');
+
+    // Set the current URL in the input field
+    urlInput.value = pageUrl;
+
+    // Copy URL function
+    copyButton.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(pageUrl);
+            
+            // Show alert
+            copyAlert.classList.remove('hidden');
+            copyAlert.classList.add('fade-in-up');
+            
+            // Hide alert after 2 seconds
+            setTimeout(() => {
+                copyAlert.classList.remove('fade-in-up');
+                copyAlert.classList.add('fade-out-down');
+                setTimeout(() => {
+                    copyAlert.classList.add('hidden');
+                    copyAlert.classList.remove('fade-out-down');
+                }, 300);
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+    });
+
+    // Add click handlers for social share buttons
+    const whatsappButton = document.querySelector('.fa-whatsapp').closest('button');
+    const telegramButton = document.querySelector('.fa-telegram').closest('button');
+    const twitterButton = document.querySelector('.fa-twitter').closest('button');
+    const emailButton = document.querySelector('.fa-envelope').closest('button');
+
+    whatsappButton.addEventListener('click', () => {
+        window.open(`https://wa.me/?text=${encodeURIComponent(pageUrl)}`, '_blank');
+    });
+
+    telegramButton.addEventListener('click', () => {
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}`, '_blank');
+    });
+
+    twitterButton.addEventListener('click', () => {
+        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}`, '_blank');
+    });
+
+    emailButton.addEventListener('click', () => {
+        window.location.href = `mailto:?body=${encodeURIComponent(pageUrl)}`;
+    });
+});
+        
+        // table of content
+    // Updated JavaScript for improved TOC visibility timing
+document.addEventListener('DOMContentLoaded', () => {
+    // Elements
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('section[id]');
+    const progressBar = document.getElementById('progress-indicator');
+    const readingProgress = document.getElementById('reading-progress');
+    const currentSection = document.getElementById('current-section');
+    const mobileToc = document.getElementById('mobile-toc');
+    const articleHeader = document.querySelector('header.container'); // Article header
+    const article = document.querySelector('article'); // Main article
+    const articleFooter = document.querySelector('article footer'); // Article footer
+
+    // Calculate article boundaries
+    function getArticleBoundaries() {
+        const headerRect = articleHeader.getBoundingClientRect();
+        const footerRect = articleFooter.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        return {
+            headerTop: headerRect.top,
+            headerBottom: headerRect.bottom,
+            footerTop: footerRect.top,
+            footerBottom: footerRect.bottom,
+            windowHeight: windowHeight
+        };
+    }
+
+    // Update mobile TOC visibility
+    function updateMobileTocVisibility() {
+        const boundaries = getArticleBoundaries();
+
+        // Show TOC when article header is in view or has been scrolled past
+        // Hide TOC when footer comes into view
+        if (boundaries.headerTop <= boundaries.windowHeight && boundaries.footerTop > boundaries.windowHeight) {
+            mobileToc.classList.add('visible');
+        } else {
+            mobileToc.classList.remove('visible');
+        }
+    }
+
+    // Calculate reading progress based on article position
+    function updateReadingProgress() {
+        const articleRect = article.getBoundingClientRect();
+        const headerRect = articleHeader.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate total scrollable distance of the article
+        const totalDistance = article.offsetHeight;
+        
+        // Calculate how far we've scrolled through the article
+        const scrolled = window.pageYOffset + windowHeight - article.offsetTop;
+        
+        // Calculate progress percentage
+        const progress = Math.max(0, Math.min(100, (scrolled / totalDistance) * 100));
+        
+        // Update progress bar and text
+        progressBar.style.width = `${progress}%`;
+        readingProgress.textContent = `${Math.round(progress)}% read`;
+    }
+
+    // Track active section
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                tocLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    if (link.getAttribute('href') === `#${id}`) {
+                        currentSection.textContent = link.textContent;
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '-20% 0px -35% 0px'
+    });
+
+    // Observe all sections
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Smooth scroll to section
+    tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Throttle function
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+
+    // Event listeners with throttling
+    const handleScroll = throttle(() => {
+        updateMobileTocVisibility();
+        updateReadingProgress();
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    // Initial call to set initial state
+    handleScroll();
+});
+       
+    </script>
+</body>
+</html>
