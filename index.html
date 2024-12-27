@@ -40,7 +40,7 @@ body{
 
         @media screen and (max-width: 768px) {
   /* Styles for devices with a screen width of 768px or less */
-  p, a {
+  p{
     font-size: 16px;
   }
 
@@ -316,18 +316,60 @@ body{
         <!-- Enhanced Recent Posts Section -->
         <section class="container mx-auto px-6 py-16">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Recent Posts</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 gradient-text">Recent Posts</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest articles and insights</p>
             </div>
     
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- New Post Card Design -->
-                <article class="new-post-card bg-white rounded-2xl overflow-hidden shadow-sm">
+                <article class="new-post-card bg-white rounded-2xl overflow-hidden shadow-sm scroll-reveal">
                     <div class="relative overflow-hidden aspect-video">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qcFJ-q9mX9HqDVeeFujghgWNyiD-kzTFzQ&s" alt="Post thumbnail" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
                             <div class="absolute bottom-4 left-4">
-                                <span class="px-3 py-1 bg-blue-500 text-white text-sm rounded-full">
+                                <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm rounded-full">
+                                    Technology
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 hover:text-blue-500 transition-colors line-clamp-2">
+                            Understanding the Impact of AI on Software Development
+                        </h3>
+                        <p class="text-gray-600 mb-2 line-clamp-3">
+                            How artificial intelligence is transforming the way we build and maintain software in the modern development landscape...
+                        </p>
+                    </div>
+                </article>
+
+                <article class="new-post-card bg-white rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qcFJ-q9mX9HqDVeeFujghgWNyiD-kzTFzQ&s" alt="Post thumbnail" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+                            <div class="absolute bottom-4 left-4">
+                                <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm rounded-full">
+                                    Technology
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 hover:text-blue-500 transition-colors line-clamp-2">
+                            Understanding the Impact of AI on Software Development
+                        </h3>
+                        <p class="text-gray-600 mb-2 line-clamp-3">
+                            How artificial intelligence is transforming the way we build and maintain software in the modern development landscape...
+                        </p>
+                    </div>
+                </article>
+
+                <article class="new-post-card bg-white rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qcFJ-q9mX9HqDVeeFujghgWNyiD-kzTFzQ&s" alt="Post thumbnail" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+                            <div class="absolute bottom-4 left-4">
+                                <span class="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm rounded-full">
                                     Technology
                                 </span>
                             </div>
@@ -359,7 +401,7 @@ body{
         <!-- Redesigned Explore Topics Section -->
         <section class="container mx-auto px-6 py-16">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Explore Topics</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 gradient-text">Explore Topics</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Dive into our carefully curated categories</p>
             </div>
 
@@ -438,37 +480,66 @@ body{
             </div>
         </section>
 
-        <section class="py-12 md:py-16">
+        <section class="py-16 md:py-24">
             <div class="container mx-auto px-6 max-w-6xl">
-                <div class="grid grid-cols-1 gap-8 items-center text-center">
-                    <div>
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">
-                            Stay Connected
-                        </h2>
-                        <p class="text-base md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                            Follow the journey, get updates, and join our community throgh the social media platforms.
-                        </p>
+                <div class="grid grid-cols-1 gap-12 items-center">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Stay Connected</h2>
+                        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Join our community across social platforms</p>
                         
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-2">
-                            <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-full hover:bg-gray-50 transition-all duration-300 group">
-                                <i class="fab fa-whatsapp text-xl text-green-500"></i>
-                                <span class="text-gray-700 text-sm lg:text-md font-medium">WhatsApp</span>
-                            </button>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                             
-                            <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-full hover:bg-gray-50 transition-all duration-300 group">
-                                <i class="fab fa-telegram text-xl text-blue-500"></i>
-                                <span class="text-gray-700 text-sm lg:text-md font-medium">Telegram</span>
-                            </button>
-                            
-                            <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-full hover:bg-gray-50 transition-all duration-300 group">
-                                <i class="fab fa-twitter text-xl text-blue-400"></i>
-                                <span class="text-gray-700 text-sm lg:text-md font-medium">Twitter</span>
-                            </button>
-                            
-                            <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-full hover:bg-gray-50 transition-all duration-300 group">
-                                <i class="far fa-envelope text-xl text-gray-600"></i>
-                                <span class="text-gray-700 text-sm lg:text-md font-medium">Email</span>
-                            </button>
+        
+                            <!-- Telegram -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-telegram text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-500 transition-colors">Telegram</span>
+                                    <div class="absolute inset-0 bg-blue-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+        
+                            <!-- Youtube -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-youtube text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-400 transition-colors">YouTube</span>
+                                    <div class="absolute inset-0 bg-blue-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+        
+                            <!-- Insta -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-instagram text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-purple-500 transition-colors">Instagram</span>
+                                    <div class="absolute inset-0 bg-purple-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+
+                            <!-- Github -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-github text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-green-500 transition-colors">GitHub</span>
+                                    <div class="absolute inset-0 bg-green-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="mt-12 scroll-reveal">
+                            <p class="text-gray-500 text-sm">Or connect directly via email</p>
+                            <a href="mailto:hello@example.com" class="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                                Get in Touch
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -586,38 +657,51 @@ body{
             lastScroll = currentScroll;
         });
 
-        // Intersection Observer for Animations
-        const animateOnScroll = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
 
-        document.querySelectorAll('.post-card, .category-card').forEach(element => {
-            animateOnScroll.observe(element);
-        });
+        // Add to your existing style section
+const scrollRevealStyles = `
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
 
-        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-        
-        const scrollRevealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    scrollRevealObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
 
-        scrollRevealElements.forEach(element => {
-            scrollRevealObserver.observe(element);
+// Create and append style element
+const styleSheet = document.createElement('style');
+styleSheet.textContent = scrollRevealStyles;
+document.head.appendChild(styleSheet);
+
+// Initialize scroll reveal
+const scrollReveal = () => {
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
         });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(element => {
+        observer.observe(element);
+    });
+};
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', scrollReveal);
     </script>
 </body>
 </html>
