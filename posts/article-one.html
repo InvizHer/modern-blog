@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvizHer | Home</title>
+
+    <!--Linked Files-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/primary.css" />
+    <link rel="stylesheet" href="../assets/css/secondary.css" />
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <button class="progress-btn">
+        <!-- SVG for circular progress -->
+        <svg class="progress-circle" width="50" height="50" viewBox="0 0 50 50">
+          <!-- Background circle -->
+          <circle class="progress-circle-bg" cx="25" cy="25" r="24" fill="none" stroke="#e6e6e6" stroke-width="2"/>
+          <!-- Progress circle -->
+          <circle class="progress-circle-path" cx="25" cy="25" r="24" fill="none" stroke="#0a71ee" stroke-width="2"/>
+        </svg>
+        <!-- Arrow icon -->
+        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <header>
+        <div class="header-items">
+            <a href="../" class="title">
+                <img src="../assets/img/logo.png" alt="logo-image">
+                <h1>InvizHer</h1>
+            </a>
+
+            <ul class="desktop-nav-list">
+                <li><a href="../">Home</a></li>
+                <li><a href="../posts/">Posts</a></li>
+                <li><a href="posts/?tag=notes">Notes</a></li>
+                <li><a href="posts/?tag=webdev">Webdev</a></li>
+            </ul>
+
+            <div class="header-icons">
+                <a class="support-btn" onclick="toggleDonorHeart(this)">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                  
+
+                <div class="toggle-btns">
+                    <button class="openbtn" id="openBtn" onclick="toggleNav()"><i class="fa-solid fa-bars-staggered"></i></button>
+                    <button class="closebtn hide" id="closeBtn" onclick="toggleNav()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar" id="mySidebar">
+            <ul class="nav-list">
+                <li><i class="fa-solid fa-house"></i><a href="../">Home</a></li>
+                <li><i class="fa-solid fa-file-pen"></i><a href="../posts/">Posts</a></li>
+                <li><i class="fa-solid fa-file-code"></i><a href="posts/?tag=notes">Notes</a></li>
+                <li><i class="fa-brands fa-html5"></i><a href="posts/?tag=webdev">Webdev</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--======================== MAIN CONTENT ===================-->
+    <main class="article-main-content container">
+        <article class="article">
+            <div class="article-header">
+                <h1 class="article-title">How to Getting Started with Web Development</h1>
+                <div class="article-info">
+                    <span><i class="fa-solid fa-calendar-days"></i> January 15, 2024</span>
+                    <span><i class="fa-regular fa-bookmark"></i> Web Development</span>
+                </div>
+                <div class="article-info-two">
+                    <span><i class="ri-timer-2-line"></i> 10 minutes read</span>
+
+                    <div class="article-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80" alt="Article featured image" class="article-main-image">
+
+            <div class="article-content">
+                <!-- Article content goes here -->
+                <p> <span id="greeting-message"></span> Good to see you here. As you know, today we are going to discuss about making of project "Responsive Mini Portfolio website using HTML CSS and JavaScript". This portfolio website is completely responsive with all devices. Also it is a completely ui/ux design based portfolio website. So without wasting too much time lets get start it to know about it.</p>
+
+                <h2>Mini Portfolio Website</h2>
+                <p>This is a simple and responsive portfolio website using HTML CSS and JavaScript. As it's name its a mini sized portfolio website, we used minimum sized components in it. The design of this portfolio website is little bit Ui and UX based. The overall look is just awesome. You can scroll down to watch it's live demo and source code.</p>
+                
+                
+                <h2>Responsive Portfolio Website</h2>
+                <p>This mini portfolio website is completely responsive with every device size. This means that whether a user is accessing the site from a desktop computer, a tablet, or a smartphone, the content and layout will adjust to provide an optimal viewing experience. Website will adjust size of its components automatically as per users device size.</p>
+
+            </div>
+
+            <div class="share-section">
+                <h3 class="share-title">Share this article</h3>
+                
+                <div class="share-buttons">
+                  <button class="share-btn" data-platform="twitter">
+                    <i class="ri-twitter-fill"></i>
+                  </button>
+                  <button class="share-btn" data-platform="facebook">
+                    <i class="ri-facebook-fill"></i>
+                  </button>
+                  <button class="share-btn" data-platform="linkedin">
+                    <i class="ri-linkedin-fill"></i>
+                  </button>
+                  <button class="share-btn" data-platform="whatsapp">
+                    <i class="ri-whatsapp-fill"></i>
+                  </button>
+                  <button class="share-btn" data-platform="telegram">
+                    <i class="ri-telegram-fill"></i>
+                  </button>
+                </div>
+              
+                <div class="copy-link-container">
+                  <input type="text" class="url-input" readonly>
+                  <button class="copy-btn">
+                    <span class="copy-icon">
+                      <i class="ri-file-copy-line"></i>
+                    </span>
+                    <span class="check-icon">
+                      <i class="ri-check-line"></i>
+                    </span>
+                  </button>
+                </div>
+            </div>
+
+            <div class="related-posts">
+                <h2 class="related-posts-title">Related Posts</h2>
+                <div class="articles-grid">
+                    <!-- Related posts will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <nav class="post-navigation">
+                <div class="nav-post prev-post">
+                    <span class="nav-label">Previous Post <i class="ri-arrow-left-double-fill"></i></span>
+                    <a href="#">Previous article title goes here</a>
+                </div>
+                <div class="nav-post next-post">
+                    <span class="nav-label">Next Post <i class="ri-arrow-right-double-fill"></i></span>
+                    <a href="#">Next article title goes here</a>
+                </div>
+            </nav>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+            <a href="#" class="title">
+                <img src="../assets/img/logo.png" alt="logo-image">
+                <h1>InvizHer</h1>
+            </a>
+            <div class="footer-social">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-telegram"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+            <p class="copyright">© InvizHer-2024. All rigths reserved</p>
+        </div>
+    </footer>
+    
+    <div id="donationOverlay" class="donation-overlay">
+      <div class="donation-modal">
+        <div class="donation-header">
+          <h2>Support Mine Work</h2>
+          <button class="close-btn" onclick="closeDonationModal()">&times;</button>
+        </div>
+        <div class="donation-content">
+          <p>Your small support will help to continue creating valuable content and resources. You can do any contribution you want to do, no matters how much small it is. It will appreciate us to work hard for you and to provide more intresting content.  </p>
+          <p>Choose any amount with you wish to support us. We truely appreciate your generosity 🙏</p>
+          <button class="donate-btn" onclick="initiatePayment()">Let's make a support ❤️</button>
+        </div>
+        <div id="redirectMessage" class="redirect-message" style="display: none;">
+          <p>Thank you for your support! You will be redirected to the payment page in <span id="countdown">5</span> seconds...</p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="../assets/js/primary.js"></script>
+    <script src="../assets/js/secondary.js"></script>
+
+    
+</body>
+</html>
