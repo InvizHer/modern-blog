@@ -540,58 +540,72 @@ function analyzeCode(codeString) {
 
                         <!-- Share Options -->
                         <!-- Replace the existing Share Options section with this modern version -->
+                        <!-- Share Options -->
 <div class="space-y-8 mb-12">
-    <h3 class="text-xl font-semibold gradient-text mb-6 mx-2">Share this:</h3>
-    
-    <!-- Social Share Buttons Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-2">
-        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
-            <i class="fab fa-whatsapp text-xl text-green-500"></i>
-            <span class="text-gray-700 text-sm lg:text-md font-medium">WhatsApp</span>
-        </button>
-        
-        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
-            <i class="fab fa-telegram text-xl text-blue-500"></i>
-            <span class="text-gray-700 text-sm lg:text-md font-medium">Telegram</span>
-        </button>
-        
-        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
-            <i class="fab fa-twitter text-xl text-blue-400"></i>
-            <span class="text-gray-700 text-sm lg:text-md font-medium">Twitter</span>
-        </button>
-        
-        <button class="share-button flex items-center justify-center gap-3 px-6 py-3 glass rounded-xl hover:bg-gray-50 transition-all duration-300 group">
-            <i class="far fa-envelope text-xl text-gray-600"></i>
-            <span class="text-gray-700 text-sm lg:text-md font-medium">Email</span>
-        </button>
-    </div>
-
-    <!-- Copy Link Section -->
-    <div class="mt-6">
-        <div class="flex items-stretch gap-3 px-2">
-            <div class="flex-1 relative">
-                <input 
-                    type="text" 
-                    id="pageUrl" 
-                    class="w-full px-4 py-3 glass text-sm lg:text-md rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-                    readonly
-                >
+    <!-- Share Container -->
+    <div class="relative">
+        <!-- Share Trigger Button -->
+        <button id="shareBtn" class="w-full glass rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-share-alt text-white text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-gray-800 font-medium">Share this article</h3>
+                        <p class="text-gray-500 text-sm">Click to share with your network</p>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="chevron"></i>
             </div>
-            <button 
-                id="copyButton"
-                class="flex items-center gap-2 text-sm lg:text-md px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:bg-gray-800 transition-all duration-300"
-            >
-                <i class="far fa-copy"></i>
-            </button>
-        </div>
-    </div>
-</div>
+        </button>
 
-<!-- Floating Copy Success Alert -->
-<div id="copyAlert" class="hidden fixed bottom-6 left-2/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg">
-    <div class="flex items-center gap-2">
-        <i class="fas fa-check"></i>
-        <span>Link copied to clipboard!</span>
+        <!-- Share Dropdown -->
+        <div id="shareDropdown" class="absolute left-0 right-0 mt-4 p-4 glass rounded-xl opacity-0 -translate-y-2 invisible transition-all duration-300 z-50">
+            
+
+            <div class="grid grid-cols-2 gap-3">
+                <!-- WhatsApp -->
+                <button data-platform="whatsapp" class="share-option flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white/80 transition-all duration-300 group hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-[#25D366] text-xl"></i>
+                    <span class="text-gray-700 font-medium">WhatsApp</span>
+                </button>
+
+                <!-- Telegram -->
+                <button data-platform="telegram" class="share-option flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white/80 transition-all duration-300 group hover:-translate-y-1">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <span class="text-gray-700 font-medium">Telegram</span>
+                </button>
+
+                <!-- Twitter -->
+                <button data-platform="twitter" class="share-option flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white/80 transition-all duration-300 group hover:-translate-y-1">
+                    <i class="fab fa-twitter text-[#1DA1F2] text-xl"></i>
+                    <span class="text-gray-700 font-medium">Twitter</span>
+                </button>
+
+                <!-- Email -->
+                <button data-platform="email" class="share-option flex items-center gap-3 p-4 rounded-xl bg-white/50 hover:bg-white/80 transition-all duration-300 group hover:-translate-y-1">
+                    <i class="far fa-envelope text-[#EA4335] text-xl"></i>
+                    <span class="text-gray-700 font-medium">Email</span>
+                </button>
+            </div>
+
+            <!-- URL Copy Section -->
+            <div class="flex gap-2 mb-2 mt-6">
+                <input type="text" id="shareUrl" readonly class="flex-1 px-4 py-2 rounded-lg bg-white/50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20" />
+                <button id="copyBtn" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:bg-white/80 rounded-lg transition-colors flex items-center gap-2">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Copy Success Alert -->
+        <div id="shareAlert" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg z-50">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-check"></i>
+                <span>Copied to clipboard!</span>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -612,7 +626,7 @@ function analyzeCode(codeString) {
 
     <section class="container mx-auto px-4 py-14 border-t border-gray-200">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-semibold mb-8 gradient-text">Continue Reading..</h3>
+            <h3 class="text-xl font-semibold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Continue Reading</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="random-articles">
                 <!-- Article cards will be populated by JavaScript -->
@@ -781,59 +795,96 @@ function analyzeCode(codeString) {
 
 
         //share section
-        // Copy URL functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const pageUrl = window.location.href;
-    const urlInput = document.getElementById('pageUrl');
-    const copyButton = document.getElementById('copyButton');
-    const copyAlert = document.getElementById('copyAlert');
+        document.addEventListener('DOMContentLoaded', () => {
+    const shareBtn = document.getElementById('shareBtn');
+    const shareDropdown = document.getElementById('shareDropdown');
+    const chevron = document.getElementById('chevron');
+    const shareOptions = document.querySelectorAll('.share-option');
+    const shareUrl = document.getElementById('shareUrl');
+    const copyBtn = document.getElementById('copyBtn');
+    const shareAlert = document.getElementById('shareAlert');
+    
+    // Get the current URL and article title
+    const currentUrl = window.location.href;
+    const articleTitle = document.querySelector('h1')?.textContent || 'Article';
+    
+    // Set the URL in the input field
+    shareUrl.value = currentUrl;
+    
+    let isOpen = false;
 
-    // Set the current URL in the input field
-    urlInput.value = pageUrl;
+    function toggleDropdown() {
+        isOpen = !isOpen;
+        
+        if (isOpen) {
+            shareDropdown.classList.remove('opacity-0', '-translate-y-2', 'invisible');
+            shareDropdown.classList.add('opacity-100', 'translate-y-0');
+            chevron.classList.add('rotate-180');
+        } else {
+            shareDropdown.classList.add('opacity-0', '-translate-y-2', 'invisible');
+            shareDropdown.classList.remove('opacity-100', 'translate-y-0');
+            chevron.classList.remove('rotate-180');
+        }
+    }
 
-    // Copy URL function
-    copyButton.addEventListener('click', async () => {
+    // Toggle dropdown
+    shareBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isOpen && !shareDropdown.contains(e.target) && !shareBtn.contains(e.target)) {
+            toggleDropdown();
+        }
+    });
+
+    // Copy URL functionality
+    copyBtn.addEventListener('click', async () => {
         try {
-            await navigator.clipboard.writeText(pageUrl);
+            await navigator.clipboard.writeText(currentUrl);
             
-            // Show alert
-            copyAlert.classList.remove('hidden');
-            copyAlert.classList.add('fade-in-up');
+            // Show success state
+            copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+            shareAlert.classList.remove('hidden');
             
-            // Hide alert after 2 seconds
+            // Reset after 2 seconds
             setTimeout(() => {
-                copyAlert.classList.remove('fade-in-up');
-                copyAlert.classList.add('fade-out-down');
-                setTimeout(() => {
-                    copyAlert.classList.add('hidden');
-                    copyAlert.classList.remove('fade-out-down');
-                }, 300);
+                copyBtn.innerHTML = '<i class="far fa-copy"></i><span>Copy</span>';
+                shareAlert.classList.add('hidden');
             }, 2000);
         } catch (err) {
             console.error('Failed to copy:', err);
         }
     });
 
-    // Add click handlers for social share buttons
-    const whatsappButton = document.querySelector('.fa-whatsapp').closest('button');
-    const telegramButton = document.querySelector('.fa-telegram').closest('button');
-    const twitterButton = document.querySelector('.fa-twitter').closest('button');
-    const emailButton = document.querySelector('.fa-envelope').closest('button');
+    // Share functionality
+    shareOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const platform = option.getAttribute('data-platform');
+            let shareUrl;
 
-    whatsappButton.addEventListener('click', () => {
-        window.open(`https://wa.me/?text=${encodeURIComponent(pageUrl)}`, '_blank');
-    });
+            switch(platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(`${articleTitle}\n${currentUrl}`)}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(articleTitle)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(articleTitle)}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${encodeURIComponent(articleTitle)}&body=${encodeURIComponent(`Check out this article:\n${currentUrl}`)}`;
+                    break;
+            }
 
-    telegramButton.addEventListener('click', () => {
-        window.open(`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}`, '_blank');
-    });
-
-    twitterButton.addEventListener('click', () => {
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}`, '_blank');
-    });
-
-    emailButton.addEventListener('click', () => {
-        window.location.href = `mailto:?body=${encodeURIComponent(pageUrl)}`;
+            if (shareUrl) {
+                window.open(shareUrl, '_blank');
+                toggleDropdown();
+            }
+        });
     });
 });
         
