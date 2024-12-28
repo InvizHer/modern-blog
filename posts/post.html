@@ -367,7 +367,7 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold gradient-text">InvizHer</span>
                     </div>
@@ -446,7 +446,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto">
                 <!-- Table of Contents - Desktop -->
                 <aside class="hidden lg:block lg:col-span-3">
-                    <div class="sticky top-24 p-6 bg-white rounded-xl shadow-sm">
+                    <div class="sticky top-24 p-6 bg-white rounded-xl mb-14 shadow-sm">
                         <h4 class="font-semibold mb-4 text-gray-900">Table of Contents</h4>
                         <nav class="space-y-2" id="desktop-toc">
                             <a href="#introduction" class="toc-link hover:bg-gray-50 rounded-md">Introduction</a>
@@ -541,7 +541,7 @@ function analyzeCode(codeString) {
                         <!-- Share Options -->
                         <!-- Replace the existing Share Options section with this modern version -->
 <div class="space-y-8 mb-12">
-    <h3 class="text-md font-semibold text-gray-800">Share this via :</h3>
+    <h3 class="text-xl font-semibold gradient-text mb-6 mx-2">Share this:</h3>
     
     <!-- Social Share Buttons Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-2">
@@ -610,15 +610,27 @@ function analyzeCode(codeString) {
         </div>
     </div>
 
+    <section class="container mx-auto px-4 py-14 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-semibold mb-8 gradient-text">Continue Reading..</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="random-articles">
+                <!-- Article cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- [Footer from home page remains the same] -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
+            <!-- Grid container with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="space-y-6">
                     <div class="flex items-center space-x-4 mb-8">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold">InvizHer</span>
                     </div>
@@ -640,7 +652,8 @@ function analyzeCode(codeString) {
                         </a>
                     </div>
                 </div>
-
+    
+                <!-- Column 2: Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
@@ -651,7 +664,8 @@ function analyzeCode(codeString) {
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
+    
+                <!-- Column 3: Resources -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Resources</h4>
                     <ul class="space-y-2">
@@ -661,10 +675,22 @@ function analyzeCode(codeString) {
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
+    
+                <!-- Column 4: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
             </div>
-
+    
+            <!-- Copyright Section -->
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">© 2024 ModernBlog. All rights reserved.</p>
+                <p class="text-gray-400">© 2024 InvizHer. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -936,6 +962,72 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
 });
        
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch posts data from posts.json
+    fetch('posts.json')
+        .then(response => response.json())
+        .then(data => {
+            const posts = data.posts;
+            
+            // Get current article URL to exclude it from recommendations
+            const currentPath = window.location.pathname;
+            
+            // Filter out current article and get two random articles
+            const otherPosts = posts.filter(post => '/' + post.slug !== currentPath);
+            const randomPosts = [];
+            
+            // Get two random posts
+            for (let i = 0; i < 2 && otherPosts.length > 0; i++) {
+                const randomIndex = Math.floor(Math.random() * otherPosts.length);
+                randomPosts.push(otherPosts.splice(randomIndex, 1)[0]);
+            }
+            
+            // Get container and clear existing content
+            const container = document.getElementById('random-articles');
+            container.innerHTML = '';
+            
+            // Create and append article cards
+            randomPosts.forEach(post => {
+                const articleCard = `
+                    <div class="group">
+                        <a href="/${post.slug}" class="block">
+                            <div class="relative overflow-hidden rounded-xl">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
+                                <img 
+                                    src="${post.thumbnail}" 
+                                    alt="${post.title}" 
+                                    class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    onerror="this.src='/api/placeholder/400/320'"
+                                >
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">
+                                            ${post.category.split(',')[0].trim()}
+                                        </span>
+                                        <span class="text-sm">${post.readTime}</span>
+                                    </div>
+                                    <h4 class="text-lg font-semibold leading-snug group-hover:text-blue-300 transition-colors">
+                                        ${post.title}
+                                    </h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                
+                container.insertAdjacentHTML('beforeend', articleCard);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching posts:', error);
+            document.getElementById('random-articles').innerHTML = `
+                <div class="col-span-full text-center text-gray-500">
+                    Unable to load recommended articles
+                </div>
+            `;
+        });
+});
     </script>
 </body>
 </html>
