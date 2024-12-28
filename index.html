@@ -92,26 +92,72 @@ body{
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        @keyframes slideUp {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-        }
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon Container Styles */
+.icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Toggle Animation */
+.menu-icon, .close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-icon.hidden-icon, .close-icon.hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile Menu Positioning */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
 
         /* Add this to your existing style section */
 @keyframes slideRight {
@@ -134,14 +180,6 @@ body{
         
         .fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .slide-down {
-            animation: slideDown 0.3s ease-out forwards;
-        }
-
-        .slide-up {
-            animation: slideUp 0.3s ease-out forwards;
         }
 
         /* Modern Glass Effect */
@@ -251,9 +289,20 @@ body{
 
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
-                        </svg>
+                        <div class="icon-container">
+                            <!-- Original Menu Icon -->
+                            <div class="menu-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                                </svg>
+                            </div>
+                            <!-- Close Icon -->
+                            <div class="close-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -567,25 +616,36 @@ body{
     <!-- Scripts -->
     <script>
         // Mobile Menu Toggle with Animation
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
+        document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    let isMenuOpen = false;
 
-        mobileMenuButton.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('slide-down');
-                mobileMenu.classList.remove('slide-up');
-            } else {
-                mobileMenu.classList.add('slide-up');
-                mobileMenu.classList.remove('slide-down');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
-            }
-        });
+    // Initially hide close icon
+    closeIcon.classList.add('hidden-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        
+        // Toggle icons
+        menuIcon.classList.toggle('hidden-icon');
+        closeIcon.classList.toggle('hidden-icon');
+        
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('slide-down');
+            mobileMenu.classList.remove('slide-up');
+        } else {
+            mobileMenu.classList.add('slide-up');
+            mobileMenu.classList.remove('slide-down');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+    });
+});
 
         // Header Scroll Effect
         const header = document.getElementById('header');
