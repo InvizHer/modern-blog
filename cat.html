@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | InvizHer - Explore Our Content Topics</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Explore our diverse range of categories including Technology, Design, Lifestyle, Development, and more. Find curated content that matches your interests on InvizHer.">
+    <meta name="keywords" content="blog categories, technology articles, design posts, lifestyle content, development tutorials, InvizHer topics">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="InvizHer Team">
+    <link rel="canonical" href="https://yourdomain.com/categories">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Categories | InvizHer - Find Your Interest">
+    <meta property="og:description" content="Explore our diverse range of categories. Find content that matches your interests on InvizHer.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/categories">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Your existing styles from home page */
+        body{
+            font-family: "Lexend", serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+  /* Styles for devices with a screen width of 768px or less */
+  p{
+    font-size: 16px;
+  }
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+}
+
+.container {
+            max-width: 1280px !important;
+        }
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon Container Styles */
+.icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Toggle Animation */
+.menu-icon, .close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-icon.hidden-icon, .close-icon.hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile Menu Positioning */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+        /* Existing animations and effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.19);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.515);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Category Card Specific Styles */
+        .category-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.1);
+        }
+
+        .category-stats {
+            opacity: 1;
+        }
+
+        /* Add your existing animations and other styles here */
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dynamic Background (same as home) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+
+    <!-- Header (same as home) -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <nav class="glass mx-4 my-4 rounded-2xl">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Connect
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <div class="icon-container">
+                            <!-- Original Menu Icon -->
+                            <div class="menu-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                                </svg>
+                            </div>
+                            <!-- Close Icon -->
+                            <div class="close-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 mb-6">
+        <!-- Categories Hero Section -->
+        <section class="container mx-auto px-6 pt-10">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Explore Our <span class="gradient-text">Categories</span>
+                </h1>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Discover our comprehensive collection of topics to find exactly what you're looking for.
+                </p>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="container mx-auto px-6 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technology Category -->
+                <a href="/category/technology" class="category-card glass rounded-2xl p-8 relative overflow-hidden scroll-reveal group">
+                    <div class="flex items-start space-x-6">
+                        <div class="category-icon bg-blue-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-microchip text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-2">Technology</h2>
+                            <p class="text-gray-600 mb-4">Exploring the latest in AI, blockchain, and emerging tech trends</p>
+                            <div class="category-stats">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-article mr-2"></i>24 articles</span>
+                                    <span><i class="fas fa-eye mr-2"></i>1.2k views</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-blue-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Design Category -->
+                <a href="/category/design" class="category-card glass rounded-2xl p-8 relative overflow-hidden scroll-reveal group">
+                    <div class="flex items-start space-x-6">
+                        <div class="category-icon bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-palette text-purple-500 text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-2">Design</h2>
+                            <p class="text-gray-600 mb-4">UI/UX principles, graphic design trends, and creative inspiration</p>
+                            <div class="category-stats">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-article mr-2"></i>18 articles</span>
+                                    <span><i class="fas fa-eye mr-2"></i>956 views</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-purple-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Development Category -->
+                <a href="/category/development" class="category-card glass rounded-2xl p-8 relative overflow-hidden scroll-reveal group">
+                    <div class="flex items-start space-x-6">
+                        <div class="category-icon bg-red-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-code text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-2">Development</h2>
+                            <p class="text-gray-600 mb-4">Programming tutorials, best practices, and development guides</p>
+                            <div class="category-stats">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-article mr-2"></i>32 articles</span>
+                                    <span><i class="fas fa-eye mr-2"></i>2.1k views</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-red-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Lifestyle Category -->
+                <a href="/category/lifestyle" class="category-card glass rounded-2xl p-8 relative overflow-hidden scroll-reveal group">
+                    <div class="flex items-start space-x-6">
+                        <div class="category-icon bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-leaf text-green-500 text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h2 class="text-xl font-bold mb-2">Lifestyle</h2>
+                            <p class="text-gray-600 mb-4">Health, wellness, productivity, and personal growth tips</p>
+                            <div class="category-stats">
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-article mr-2"></i>28 articles</span>
+                                    <span><i class="fas fa-eye mr-2"></i>1.8k views</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-green-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Add more categories following the same pattern -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Keep your existing footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-10">
+            <!-- Grid container with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold">InvizHer</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright Section -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 InvizHer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+
+        // Mobile Menu Toggle with Animation
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    let isMenuOpen = false;
+
+    // Initially hide close icon
+    closeIcon.classList.add('hidden-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        
+        // Toggle icons
+        menuIcon.classList.toggle('hidden-icon');
+        closeIcon.classList.toggle('hidden-icon');
+        
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('slide-down');
+            mobileMenu.classList.remove('slide-up');
+        } else {
+            mobileMenu.classList.add('slide-up');
+            mobileMenu.classList.remove('slide-down');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+    });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('py-2');
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                header.classList.add('-translate-y-full');
+            } else {
+                header.classList.remove('-translate-y-full');
+            }
+            
+            if (currentScroll > 100) {
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('py-2');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+
+        // Add to your existing style section
+const scrollRevealStyles = `
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
+
+// Create and append style element
+const styleSheet = document.createElement('style');
+styleSheet.textContent = scrollRevealStyles;
+document.head.appendChild(styleSheet);
+
+// Initialize scroll reveal
+const scrollReveal = () => {
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(element => {
+        observer.observe(element);
+    });
+};
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', scrollReveal);
+
+        // Your existing header scroll effect code
+    </script>
+</body>
+</html>
