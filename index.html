@@ -113,6 +113,17 @@ body{
             }
         }
 
+        /* Add this to your existing style section */
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+/* Add this class for the continuous animation */
+.arrow-animate {
+    animation: slideRight 1.5s ease-in-out infinite;
+}
+
         .animate-float {
             animation: float 4s ease-in-out infinite;
         }
@@ -283,12 +294,15 @@ body{
                                 that sparks creativity and drives innovation.
                             </p>
                             <div class="flex flex-wrap gap-4">
-                                <button class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all">
-                                    Catlog
-                                </button>
-                                <button class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity shine-effect">
-                                    Blog
-                                </button>
+                                <a href="#Topics" class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all">
+                                    Topics
+                                </a>
+                                <a href="posts/" class="group px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity shine-effect inline-flex items-center">
+                                    <span>Blog</span>
+                                    <svg class="w-4 h-4 ml-2 arrow-animate" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                         <div class="hidden lg:block">
@@ -316,9 +330,9 @@ body{
             </div>
     
             <div class="text-center mt-12">
-                <a href="/posts" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                <a href="posts/" class="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity shine-effect inline-flex items-center">
                     <span>View All Posts</span>
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                 </a>
@@ -326,7 +340,7 @@ body{
         </section>
 
         <!-- Redesigned Explore Topics Section -->
-        <section class="container mx-auto px-6 py-16">
+        <section id="Topics" class="container mx-auto px-6 py-16">
             <div class="text-center mb-12">
                 <h2 class="text-3xl lg:text-4xl font-bold mb-4 gradient-text">Explore Topics</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Dive into our carefully curated categories</p>
@@ -478,8 +492,10 @@ body{
     <!-- Enhanced Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
+            <!-- Grid container with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="space-y-6">
                     <div class="flex items-center space-x-4 mb-8">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
@@ -505,7 +521,8 @@ body{
                         </a>
                     </div>
                 </div>
-
+    
+                <!-- Column 2: Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
@@ -516,7 +533,8 @@ body{
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
+    
+                <!-- Column 3: Resources -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Resources</h4>
                     <ul class="space-y-2">
@@ -526,10 +544,22 @@ body{
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
+    
+                <!-- Column 4: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
             </div>
-
+    
+            <!-- Copyright Section -->
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">© 2024 ModernBlog. All rights reserved.</p>
+                <p class="text-gray-400">© 2024 InvizHer. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -655,14 +685,13 @@ function createRecentPostCard(post) {
             <div class="relative overflow-hidden aspect-video">
                 <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-                    <div class="absolute bottom-4 left-4 flex gap-2">
-                        <span class="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm rounded-full">
-                            ${mainCategory}
-                        </span>
-                        <span class="date-badge px-3 py-1 text-white text-sm rounded-full">
-                            ${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                        </span>
-                    </div>
+
+                    <span class="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm rounded-full">
+                        ${mainCategory}
+                    </span>
+                    <span class="absolute bottom-4 right-3 px-3 py-1 text-white text-sm rounded-full">
+                        ${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </span>
                 </div>
             </div>
             <div class="p-6">
