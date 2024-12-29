@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | InvizHer - Programming & Development Blog</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Find answers to frequently asked questions about InvizHer's programming tutorials, development resources, and content sharing platform.">
+    <meta name="keywords" content="FAQ, programming help, development resources, coding tutorials FAQ, InvizHer help">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="InvizHer Team">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body{
+            font-family: "Lexend", serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+  /* Styles for devices with a screen width of 768px or less */
+  p{
+    font-size: 16px;
+  }
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+}
+
+.container {
+            max-width: 1280px !important;
+        }
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon Container Styles */
+.icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Toggle Animation */
+.menu-icon, .close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-icon.hidden-icon, .close-icon.hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile Menu Positioning */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+        /* Existing animations and effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.19);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.515);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Use all the existing styles from your home page here */
+        /* Including animations, scrollbar, glass effect, etc. */
+        
+        /* Additional FAQ-specific styles */
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dynamic Background (same as home) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+
+    <!-- Header (same as home) -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <nav class="glass mx-4 my-4 rounded-2xl">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Connect
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <div class="icon-container">
+                            <!-- Original Menu Icon -->
+                            <div class="menu-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                                </svg>
+                            </div>
+                            <!-- Close Icon -->
+                            <div class="close-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="pt-28">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-4 py-10">
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
+                <div class="relative glass rounded-3xl p-8 lg:p-16">
+                    <div class="text-center">
+                        <h1 class="text-3xl lg:text-5xl font-bold mb-6">
+                            <span class="gradient-text">Frequently Asked</span> Questions
+                        </h1>
+                        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                            Find answers to common questions about our programming resources, tutorials, and content sharing platform.
+                        </p>
+                        <a href="/pages/contact.html" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            <span>Still have questions?</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Categories -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- General Questions -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-xl font-bold mb-6 gradient-text">General Questions</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">What is InvizHer?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                InvizHer is a personal blog focused on sharing programming knowledge, development resources, and coding tutorials. We aim to make technical content accessible to everyone interested in learning to code.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">Is the content free?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                Yes! All our content is completely free and accessible to everyone. We believe in making programming education available to all interested learners.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content & Resources -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-xl font-bold mb-6 gradient-text">Content & Resources</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">How often is content updated?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                We publish new articles and tutorials regularly, typically 2-3 times per week. The topics cover various programming languages, development tools, and industry best practices.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">Can I request specific topics?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                Absolutely! You can suggest topics through our contact page. We value community input and try to create content based on reader requests.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Questions -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-xl font-bold mb-6 gradient-text">Technical Support</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">How do I report issues?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                If you find any issues with the content or website, please use our contact form or reach out through GitHub. We appreciate your feedback and work quickly to address any problems.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-medium">Can I contribute content?</h3>
+                                <button class="faq-icon">
+                                    <i class="fas fa-plus text-blue-500"></i>
+                                </button>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                While we currently don't accept direct content submissions, you can suggest topics or corrections through our GitHub repository or contact form.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
+                <p class="text-gray-600 mb-8">Can't find what you're looking for? Feel free to reach out to us directly.</p>
+                <a href="/pages/contact.html" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                    Contact Us
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Copy your existing footer here -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-10">
+            <!-- Grid container with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold">InvizHer</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright Section -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 InvizHer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Interaction
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+// Mobile Menu Toggle with Animation
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.close-icon');
+let isMenuOpen = false;
+
+// Initially hide close icon
+closeIcon.classList.add('hidden-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+isMenuOpen = !isMenuOpen;
+
+// Toggle icons
+menuIcon.classList.toggle('hidden-icon');
+closeIcon.classList.toggle('hidden-icon');
+
+if (isMenuOpen) {
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('slide-down');
+    mobileMenu.classList.remove('slide-up');
+} else {
+    mobileMenu.classList.add('slide-up');
+    mobileMenu.classList.remove('slide-down');
+    setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+    }, 300);
+}
+});
+
+// Header Scroll Effect
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('py-2');
+        return;
+    }
+    
+    if (currentScroll > lastScroll) {
+        header.classList.add('-translate-y-full');
+    } else {
+        header.classList.remove('-translate-y-full');
+    }
+    
+    if (currentScroll > 100) {
+        header.classList.add('py-2');
+    } else {
+        header.classList.remove('py-2');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+
+// Add to your existing style section
+const scrollRevealStyles = `
+.scroll-reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+opacity: 1;
+transform: translateY(0);
+}
+`;
+
+// Create and append style element
+const styleSheet = document.createElement('style');
+styleSheet.textContent = scrollRevealStyles;
+document.head.appendChild(styleSheet);
+
+// Initialize scroll reveal
+const scrollReveal = () => {
+const observerOptions = {
+root: null,
+threshold: 0.1,
+rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+    }
+});
+}, observerOptions);
+
+document.querySelectorAll('.scroll-reveal').forEach(element => {
+observer.observe(element);
+});
+};
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', scrollReveal);
+
+
+    </script>
+</body>
+</html>
