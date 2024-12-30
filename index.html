@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog | Discover Amazing Content</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Discover thought-provoking articles on technology, lifestyle, and design. Join our community of curious minds and explore curated content that inspires growth.">
+    <meta name="keywords" content="blog, modern blog, technology articles, lifestyle blog, design insights, programming tutorials">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ModernBlog Team">
+    <link rel="canonical" href="https://yourdomain.com">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Modern Blog | Your Daily Source of Inspiration">
+    <meta property="og:description" content="Discover thought-provoking articles on technology, lifestyle, and design. Join our community of curious minds.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+
+body{
+            font-family: "Lexend", serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+  /* Styles for devices with a screen width of 768px or less */
+  p{
+    font-size: 16px;
+  }
+
+  h1, h2, h3{
+    font-weight: 300;
+  }
+}
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon Container Styles */
+.icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Toggle Animation */
+.menu-icon, .close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-icon.hidden-icon, .close-icon.hidden-icon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile Menu Positioning */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.slide-down {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+        /* Add this to your existing style section */
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+/* Add this class for the continuous animation */
+.arrow-animate {
+    animation: slideRight 1.5s ease-in-out infinite;
+}
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .animate-scale {
+            animation: scale 3s ease-in-out infinite;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Modern Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.19);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.515);
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Category Card Effect */
+        .category-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .category-card:hover {
+            transform: rotateY(10deg) translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Dynamic Post */
+        
+        .new-post-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .new-post-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Custom Shapes */
+        .blob {
+            border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+        }
+
+        /* Container Max Width */
+        .container {
+            max-width: 1280px !important;
+        }
+
+        /* Topic Tag Animation */
+        .topic-tag {
+            transition: all 0.3s ease;
+        }
+
+        .topic-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* New Post Card Design */
+        .new-post-card {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .new-post-card:hover {
+            border-color: #3B82F6;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+
+    <!-- Enhanced Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+        <nav class="glass mx-4 my-4 rounded-2xl">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Connect
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
+                        <div class="icon-container">
+                            <!-- Original Menu Icon -->
+                            <div class="menu-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                                </svg>
+                            </div>
+                            <!-- Close Icon -->
+                            <div class="close-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Connect
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-28">
+        <!-- Hero Section -->
+<section class="container mx-auto px-4 py-10">
+    <div class="relative">
+        <div class="absolute inset-0 glass rounded-3xl"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden rounded-3xl">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute top-1/2 left-1/2 w-36 h-36 bg-pink-400/20 rounded-full blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+
+        <div class="relative glass rounded-3xl p-6 sm:p-8 lg:p-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content Section -->
+                <div class="fade-in-up">
+                    <!-- Welcome Message -->
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-600 mb-6">
+                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <span class="text-sm font-medium">Welcome to invizher!</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Coding, Learning, 
+                        <span class="block mt-2">and <span class="gradient-text">Sharing</span></span>
+                    </h1>
+
+                    <p class="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
+                        I share my journey through code, document my projects, and provide resources to help fellow developers. From programming tutorials to development insights - let's grow together.
+                    </p>
+
+                    <!-- Enhanced CTA Section -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#Topics" class="px-8 py-3 border-2 border-gray-200 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all flex items-center">
+                            <span>Topics</span>
+                            
+                        </a>
+                        <a href="posts/" class="group px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all flex items-center">
+                            <span>Articles</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Section - Now Responsive -->
+                <div class="relative mt-12 lg:mt-0">
+                    <!-- 3D Floating Cards Effect -->
+                    <div class="relative h-[400px] sm:h-[500px]">
+                        <!-- Technology Cards - Adjusted for responsive design -->
+                        <div class="absolute top-10 right-0 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform rotate-6 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -1s">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                                    <i class="fab fa-react text-blue-500 text-lg sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-sm sm:text-base">React.js</h3>
+                                    <p class="text-xs sm:text-sm text-gray-600">Frontend</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-40 left-0 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform -rotate-6 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -2s">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                                    <i class="fab fa-node-js text-green-500 text-lg sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-sm sm:text-base">Node.js</h3>
+                                    <p class="text-xs sm:text-sm text-gray-600">Backend</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-10 lg:bottom-20 right-10 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform rotate-3 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -3s">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                                    <i class="fas fa-database text-purple-500 text-lg sm:text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-sm sm:text-base">MongoDB</h3>
+                                    <p class="text-xs sm:text-sm text-gray-600">Database</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Central Circle with animated border - Responsive sizing -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="relative w-24 h-24 sm:w-32 sm:h-32">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-spin" style="animation-duration: 3s"></div>
+                                <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code text-2xl sm:text-3xl gradient-text"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+        
+
+        <!-- Enhanced Recent Posts Section -->
+        <section class="container mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 gradient-text">Recent Posts</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with our latest articles and insights</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="recentPostsGrid">
+                <!-- Posts will be loaded here by JavaScript -->
+            </div>
+    
+            <div class="text-center mt-12">
+                <a href="posts/" class="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity shine-effect inline-flex items-center">
+                    <span>View All Posts</span>
+                    <svg class="w-4 h-4 ml-2 transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Redesigned Explore Topics Section -->
+<section id="Topics" class="container mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4 gradient-text">Explore Topics</h2>
+        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Dive into our carefully curated categories and discover a world of knowledge</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Programming Languages Topic -->
+        <div class="topic-card glass rounded-2xl p-8 relative overflow-hidden group scroll-reveal hover:shadow-xl transition-all duration-300">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+                <div class="topic-icon bg-blue-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform">
+                    <i class="fas fa-code text-blue-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Programming Languages</h3>
+                <p class="text-gray-600 mb-4">Master modern programming languages</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                        <span>Python, JavaScript, Java</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                        <span>Web Development</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                        <span>Mobile Development</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-blue-500 group/link">
+                    <span class="mr-2 group-hover/link:mr-4 transition-all">Explore Languages</span>
+                    <svg class="w-4 h-4 group-hover/link:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Topic -->
+        <div class="topic-card glass rounded-2xl p-8 relative overflow-hidden group scroll-reveal hover:shadow-xl transition-all duration-300">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+                <div class="topic-icon bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform">
+                    <i class="fas fa-th-large text-purple-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Categories</h3>
+                <p class="text-gray-600 mb-4">Explore diverse tech categories</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                        <span>Frontend Development</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                        <span>Backend Development</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                        <span>DevOps & Cloud</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-purple-500 group/link">
+                    <span class="mr-2 group-hover/link:mr-4 transition-all">Browse Categories</span>
+                    <svg class="w-4 h-4 group-hover/link:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Topic -->
+        <div class="topic-card glass rounded-2xl p-8 relative overflow-hidden group scroll-reveal hover:shadow-xl transition-all duration-300">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+                <div class="topic-icon bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform">
+                    <i class="fas fa-project-diagram text-green-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Projects</h3>
+                <p class="text-gray-600 mb-4">Build real-world applications</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span>Web Applications</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span>Mobile Apps</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span>API Development</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-green-500 group/link">
+                    <span class="mr-2 group-hover/link:mr-4 transition-all">View Projects</span>
+                    <svg class="w-4 h-4 group-hover/link:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Topic -->
+        <div class="topic-card glass rounded-2xl p-8 relative overflow-hidden group scroll-reveal hover:shadow-xl transition-all duration-300">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <div class="relative z-10">
+                <div class="topic-icon bg-red-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform">
+                    <i class="fas fa-book text-red-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Resources</h3>
+                <p class="text-gray-600 mb-4">Access learning materials</p>
+                <div class="space-y-2 mb-6">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                        <span>Documentation</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                        <span>Tutorials & Guides</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                        <span>Best Practices</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-red-500 group/link">
+                    <span class="mr-2 group-hover/link:mr-4 transition-all">Access Resources</span>
+                    <svg class="w-4 h-4 group-hover/link:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="grid grid-cols-1 gap-12 items-center">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Stay Connected</h2>
+                        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Join our community across social platforms</p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                            
+        
+                            <!-- Telegram -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-telegram text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-500 transition-colors">Telegram</span>
+                                    <div class="absolute inset-0 bg-blue-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+        
+                            <!-- Youtube -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-youtube text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-blue-400 transition-colors">YouTube</span>
+                                    <div class="absolute inset-0 bg-blue-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+        
+                            <!-- Insta -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-instagram text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-purple-500 transition-colors">Instagram</span>
+                                    <div class="absolute inset-0 bg-purple-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+
+                            <!-- Github -->
+                            <div class="group glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 cursor-pointer scroll-reveal">
+                                <div class="relative">
+                                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                                        <i class="fab fa-github text-white text-2xl"></i>
+                                    </div>
+                                    <span class="block text-sm font-medium text-gray-700 group-hover:text-green-500 transition-colors">GitHub</span>
+                                    <div class="absolute inset-0 bg-green-400/10 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="mt-12 scroll-reveal">
+                            <p class="text-gray-500 text-sm">Or connect directly via email</p>
+                            <a href="mailto:hello@example.com" class="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-10">
+            <!-- Grid container with 4 columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="relative w-8 h-8">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
+                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                        </div>
+                        <span class="text-xl font-bold">InvizHer</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3: Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4: Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright Section -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2024 InvizHer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookieConsent" class="fixed max-w-screen-lg w-full left-1/2 -translate-x-1/2 bottom-0 mb-4 mx-auto px-4 transition-all duration-700 ease-in-out translate-y-full opacity-0 z-50">
+        <div class="glass-morphism rounded-2xl p-6 shadow-lg border border-white/20 transform transition-transform duration-500 hover:scale-[1.01]">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold mb-2">🍪 Cookie Preferences</h3>
+                    <p class="text-gray-600 text-sm">We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                </div>
+                <div class="flex flex-row gap-3 min-w-fit">
+                    <button id="customizeBtn" class="px-4 py-2 text-sm border-2 border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Customize
+                    </button>
+                    <button id="acceptAllBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Settings Modal -->
+    <!-- Cookie Settings Modal -->
+<div id="cookieModal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm modal-overlay"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4 transform transition-all duration-500 scale-95">
+        <div class="bg-white rounded-2xl p-6 shadow-xl border border-white/20">
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Cookie Settings</h3>
+                <p class="text-gray-600">Configure your cookie preferences</p>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <!-- Essential Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Essential Cookies</h4>
+                        <p class="text-sm text-gray-600">Required for the website to function properly</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" checked disabled class="appearance-none w-12 h-6 rounded-full bg-blue-500 checked:bg-blue-500 transition-all cursor-not-allowed opacity-50">
+                        <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Analytics Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Analytics Cookies</h4>
+                        <p class="text-sm text-gray-600">Help us improve our website by collecting usage information</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="analyticsToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Marketing Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Marketing Cookies</h4>
+                        <p class="text-sm text-gray-600">Used to deliver personalized advertisements</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="marketingToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3">
+                <button id="savePreferencesBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Save Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle with Animation
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    let isMenuOpen = false;
+
+    // Initially hide close icon
+    closeIcon.classList.add('hidden-icon');
+
+    mobileMenuButton.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        
+        // Toggle icons
+        menuIcon.classList.toggle('hidden-icon');
+        closeIcon.classList.toggle('hidden-icon');
+        
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('slide-down');
+            mobileMenu.classList.remove('slide-up');
+        } else {
+            mobileMenu.classList.add('slide-up');
+            mobileMenu.classList.remove('slide-down');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+    });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('py-2');
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                header.classList.add('-translate-y-full');
+            } else {
+                header.classList.remove('-translate-y-full');
+            }
+            
+            if (currentScroll > 100) {
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('py-2');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+
+        // Add to your existing style section
+const scrollRevealStyles = `
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+`;
+
+// Create and append style element
+const styleSheet = document.createElement('style');
+styleSheet.textContent = scrollRevealStyles;
+document.head.appendChild(styleSheet);
+
+// Initialize scroll reveal
+const scrollReveal = () => {
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(element => {
+        observer.observe(element);
+    });
+};
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', scrollReveal);
+
+async function fetchRecentPosts() {
+    try {
+        const response = await fetch('posts/posts.json');
+        const data = await response.json();
+        // Take first 3 posts (9,8,7) without reversing
+        const recentPosts = data.posts.slice(0, 3);
+        displayRecentPosts(recentPosts);
+    } catch (error) {
+        console.error('Error fetching recent posts:', error);
+    }
+}
+
+function createRecentPostCard(post) {
+    // Split categories if it's a string
+    const categories = typeof post.category === 'string' 
+        ? post.category.split(', ') 
+        : post.category;
+    
+    const mainCategory = categories[0]; // Display first category as main
+
+    return `
+        <article class="new-post-card bg-white rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+            <div class="relative overflow-hidden aspect-video">
+                <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+
+                    <span class="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm rounded-full">
+                        ${mainCategory}
+                    </span>
+                    <span class="absolute bottom-4 right-3 px-3 py-1 text-white text-sm rounded-full">
+                        ${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 hover:text-blue-500 transition-colors line-clamp-2">
+                    <a href="/post/${post.slug}">${post.title}</a>
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">${post.description}</p>
+                <div class="flex flex-wrap gap-2">
+                    ${categories
+                        .filter(cat => cat !== mainCategory)
+                        .map(cat => `
+                            <span class="text-sm text-gray-500">#${cat}</span>
+                        `).join('')}
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+function displayRecentPosts(posts) {
+    const recentPostsGrid = document.getElementById('recentPostsGrid');
+    if (!recentPostsGrid) return;
+
+    recentPostsGrid.innerHTML = posts.map(post => createRecentPostCard(post)).join('');
+    
+    // Initialize scroll reveal for new elements
+    scrollReveal();
+}
+
+// Add this to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    fetchRecentPosts();
+});
+
+// cookiesssssssssssssss
+class CookieConsentManager {
+    constructor() {
+        // DOM Elements
+        this.consentBanner = document.getElementById('cookieConsent');
+        this.modal = document.getElementById('cookieModal');
+        this.modalOverlay = this.modal.querySelector('.modal-overlay');
+        this.buttons = {
+            customize: document.getElementById('customizeBtn'),
+            acceptAll: document.getElementById('acceptAllBtn'),
+            savePreferences: document.getElementById('savePreferencesBtn')
+        };
+        this.toggles = {
+            analytics: document.getElementById('analyticsToggle'),
+            marketing: document.getElementById('marketingToggle')
+        };
+
+        this.init();
+    }
+
+    init() {
+        if (!this.getStoredConsent()) {
+            this.showConsentBanner();
+        }
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        // Bind button events
+        this.buttons.customize.addEventListener('click', () => this.openModal());
+        this.buttons.acceptAll.addEventListener('click', () => this.handleAcceptAll());
+        this.buttons.savePreferences.addEventListener('click', () => this.handleSavePreferences());
+
+        // Bind modal overlay click
+        this.modalOverlay.addEventListener('click', () => this.closeModal());
+
+        // Bind ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) {
+                this.closeModal();
+            }
+        });
+
+        // Bind toggle switches
+        Object.values(this.toggles).forEach(toggle => {
+            toggle.addEventListener('change', (e) => this.handleToggleChange(e.target));
+        });
+    }
+
+    showConsentBanner() {
+        requestAnimationFrame(() => {
+            this.consentBanner.style.display = 'block';
+            requestAnimationFrame(() => {
+                this.consentBanner.classList.remove('translate-y-full', 'opacity-0');
+            });
+        });
+    }
+
+    hideConsentBanner() {
+        return new Promise(resolve => {
+            this.consentBanner.classList.add('translate-y-full', 'opacity-0');
+            setTimeout(() => {
+                this.consentBanner.style.display = 'none';
+                resolve();
+            }, 300);
+        });
+    }
+
+    openModal() {
+    document.body.style.overflow = 'hidden';
+    this.loadSavedPreferences();
+    this.modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+        const modalContent = this.modal.querySelector('.transform.scale-95');
+        if (modalContent) {
+            modalContent.classList.remove('scale-95');
+        }
+    });
+}
+
+closeModal() {
+    const modalContent = this.modal.querySelector('.transform');
+    if (modalContent) {
+        modalContent.classList.add('scale-95');
+    }
+    
+    setTimeout(() => {
+        this.modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        if (modalContent) {
+            modalContent.classList.remove('scale-95');
+        }
+    }, 300);
+}
+
+    handleToggleChange(toggle) {
+        const dot = toggle.nextElementSibling;
+        dot.style.transform = toggle.checked ? 'translateX(-24px)' : 'translateX(0)';
+    }
+
+    async handleAcceptAll() {
+        const preferences = {
+            analytics: true,
+            marketing: true
+        };
+        
+        this.setStoredConsent(preferences);
+        await this.hideConsentBanner();
+    }
+
+    async handleSavePreferences() {
+        const preferences = {
+            analytics: this.toggles.analytics.checked,
+            marketing: this.toggles.marketing.checked
+        };
+        
+        this.setStoredConsent(preferences);
+        this.closeModal();
+        await this.hideConsentBanner();
+    }
+
+    loadSavedPreferences() {
+        const savedPreferences = this.getStoredConsent();
+        if (savedPreferences) {
+            this.toggles.analytics.checked = savedPreferences.analytics;
+            this.toggles.marketing.checked = savedPreferences.marketing;
+            
+            Object.values(this.toggles).forEach(toggle => {
+                this.handleToggleChange(toggle);
+            });
+        }
+    }
+
+    getStoredConsent() {
+        try {
+            return JSON.parse(localStorage.getItem('cookieConsent'));
+        } catch {
+            return null;
+        }
+    }
+
+    setStoredConsent(preferences) {
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new CookieConsentManager();
+});
+    </script>
+</body>
+</html>
