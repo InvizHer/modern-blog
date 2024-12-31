@@ -22,6 +22,9 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../assets/css/primary.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,69 +33,7 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: "Lexend", serif;
-        }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.19);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.515);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .policy-section {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .policy-section:nth-child(2) { animation-delay: 0.2s; }
-        .policy-section:nth-child(3) { animation-delay: 0.4s; }
-        .policy-section:nth-child(4) { animation-delay: 0.6s; }
-        
-        #table-of-contents li {
-            transition: all 0.3s ease;
-        }
-
-        #table-of-contents li:hover {
-            transform: translateX(8px);
-            color: #3B82F6;
-        }
-
-        .section-link {
-            scroll-margin-top: 100px;
-        }
-
-        @media (max-width: 768px) {
-            .section-link {
-                scroll-margin-top: 80px;
-            }
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Dynamic Background -->
@@ -375,6 +316,8 @@
     </main>
 
     <!-- Footer would go here if needed -->
+
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>

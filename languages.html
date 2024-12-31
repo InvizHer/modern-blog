@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | InvizHer - Programming & Development Blog</title>
+    <title>Programming Languages | Modern Blog for Developers</title>
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Find answers to frequently asked questions about InvizHer's programming tutorials, development resources, and content sharing platform.">
-    <meta name="keywords" content="FAQ, programming help, development resources, coding tutorials FAQ, InvizHer help">
+    <meta name="description" content="Explore comprehensive guides and tutorials across various programming languages. Find in-depth resources for Python, JavaScript, Java, and more.">
+    <meta name="keywords" content="programming languages, coding tutorials, developer resources, programming guides, learn to code">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="InvizHer Team">
+    <meta name="author" content="InvizHer">
+    <link rel="canonical" href="https://yourdomain.com/languages">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Programming Languages | Learn and Master Different Technologies">
+    <meta property="og:description" content="Discover comprehensive programming language guides and tutorials. Start your coding journey today.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/languages">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../assets/css/primary.css">
-    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/primary.css">
+    <link rel="stylesheet" href="assets/css/secondary.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +33,6 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
 
 </head>
 <body class="bg-gray-50">
@@ -100,139 +108,98 @@
             </div>
         </div>
     </header>
-    
-    <main class="pt-28">
+
+    <!-- Main Content -->
+    <main class="pt-32 mb-6">
         <!-- Hero Section -->
         <section class="container mx-auto px-4 py-10">
-            <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
-                <div class="relative glass rounded-3xl p-8 lg:p-16">
-                    <div class="text-center">
-                        <h1 class="text-3xl lg:text-5xl font-bold mb-6">
-                            <span class="gradient-text">Frequently Asked</span> Questions
-                        </h1>
-                        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                            Find answers to common questions about our programming resources, tutorials, and content sharing platform.
-                        </p>
-                        <a href="/pages/contact.html" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                            <span>Still have questions?</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h1 class="text-4xl lg:text-4xl font-bold mb-6">
+                    Explore <span class="gradient-text">Programming Languages</span>
+                </h1>
+                <p class="text-gray-600 text-lg">
+                    Discover comprehensive guides, tutorials, and resources for various programming languages.
+                </p>
             </div>
-        </section>
 
-        <!-- FAQ Categories -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- General Questions -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">General Questions</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">What is InvizHer?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                InvizHer is a personal blog focused on sharing programming knowledge, development resources, and coding tutorials. We aim to make technical content accessible to everyone interested in learning to code.
-                            </div>
+            <!-- Languages Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-2">
+                <!-- Python -->
+                <a href="/languages/python" class="language-card glass rounded-2xl p-6 scroll-reveal block hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="language-icon w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100">
+                            <i class="fab fa-python text-2xl text-blue-500"></i>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Is the content free?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                Yes! All our content is completely free and accessible to everyone. We believe in making programming education available to all interested learners.
-                            </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Python</h3>
+                            <span class="text-sm text-gray-500">Beginner Friendly</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Content & Resources -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">Content & Resources</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">How often is content updated?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                We publish new articles and tutorials regularly, typically 2-3 times per week. The topics cover various programming languages, development tools, and industry best practices.
-                            </div>
+                    <p class="text-gray-600 mb-4">Popular for web development, data science, and automation.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="category-badge px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">#DataScience</span>
+                        <span class="category-badge px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">#WebDev</span>
+                    </div>
+                </a>
+            
+                <!-- JavaScript -->
+                <a href="/languages/javascript" class="language-card glass rounded-2xl p-6 scroll-reveal block hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="language-icon w-12 h-12 flex items-center justify-center rounded-xl bg-yellow-100">
+                            <i class="fab fa-js text-2xl text-yellow-500"></i>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Can I request specific topics?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                Absolutely! You can suggest topics through our contact page. We value community input and try to create content based on reader requests.
-                            </div>
+                        <div>
+                            <h3 class="text-xl font-bold">JavaScript</h3>
+                            <span class="text-sm text-gray-500">Web Essential</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Technical Questions -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">Technical Support</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">How do I report issues?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                If you find any issues with the content or website, please use our contact form or reach out through GitHub. We appreciate your feedback and work quickly to address any problems.
-                            </div>
+                    <p class="text-gray-600 mb-4">The language of the web, perfect for frontend and backend development.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="category-badge px-3 py-1 text-sm bg-yellow-100 text-yellow-600 rounded-full">#Frontend</span>
+                        <span class="category-badge px-3 py-1 text-sm bg-yellow-100 text-yellow-600 rounded-full">#NodeJS</span>
+                    </div>
+                </a>
+            
+                <!-- Java -->
+                <a href="/languages/java" class="language-card glass rounded-2xl p-6 scroll-reveal block hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="language-icon w-12 h-12 flex items-center justify-center rounded-xl bg-red-100">
+                            <i class="fab fa-java text-2xl text-red-500"></i>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Can I contribute content?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                While we currently don't accept direct content submissions, you can suggest topics or corrections through our GitHub repository or contact form.
-                            </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Java</h3>
+                            <span class="text-sm text-gray-500">Enterprise Ready</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
-                <p class="text-gray-600 mb-8">Can't find what you're looking for? Feel free to reach out to us directly.</p>
-                <a href="/pages/contact.html" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                    Contact Us
+                    <p class="text-gray-600 mb-4">Robust language for enterprise applications and Android development.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="category-badge px-3 py-1 text-sm bg-red-100 text-red-600 rounded-full">#Enterprise</span>
+                        <span class="category-badge px-3 py-1 text-sm bg-red-100 text-red-600 rounded-full">#Android</span>
+                    </div>
+                </a>
+            
+                <!-- C++ -->
+                <a href="/languages/cpp" class="language-card glass rounded-2xl p-6 scroll-reveal block hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="language-icon w-12 h-12 flex items-center justify-center rounded-xl bg-purple-100">
+                            <i class="fas fa-code text-2xl text-purple-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">C++</h3>
+                            <span class="text-sm text-gray-500">Performance First</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">High-performance language for system programming and game development.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="category-badge px-3 py-1 text-sm bg-purple-100 text-purple-600 rounded-full">#GameDev</span>
+                        <span class="category-badge px-3 py-1 text-sm bg-purple-100 text-purple-600 rounded-full">#Systems</span>
+                    </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Copy your existing footer here -->
+    <!-- Footer (same as home) -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
             <!-- Grid container with 4 columns -->
@@ -307,8 +274,10 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+
     <script src="assets/js/main.js"></script>
-<script src="assets/js/secondary.js"></script>
+    <script src="assets/js/secondary.js"></script>
 
 </body>
 </html>

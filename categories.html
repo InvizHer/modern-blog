@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | InvizHer - Programming & Development Blog</title>
+    <title>Categories | Modern Blog</title>
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Find answers to frequently asked questions about InvizHer's programming tutorials, development resources, and content sharing platform.">
-    <meta name="keywords" content="FAQ, programming help, development resources, coding tutorials FAQ, InvizHer help">
+    <meta name="description" content="Explore our diverse categories of thought-provoking content across technology, lifestyle, design, and more.">
+    <meta name="keywords" content="blog categories, technology blog, lifestyle articles, design insights, programming tutorials">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="InvizHer Team">
+    <meta name="author" content="ModernBlog Team">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../assets/css/primary.css">
-    <link rel="stylesheet" href="../assets/css/pages.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/primary.css">
+    <link rel="stylesheet" href="assets/css/secondary.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     
 
 </head>
@@ -100,139 +99,98 @@
             </div>
         </div>
     </header>
-    
-    <main class="pt-28">
+
+    <main class="pt-32 pb-20">
         <!-- Hero Section -->
-        <section class="container mx-auto px-4 py-10">
-            <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
-                <div class="relative glass rounded-3xl p-8 lg:p-16">
-                    <div class="text-center">
-                        <h1 class="text-3xl lg:text-5xl font-bold mb-6">
-                            <span class="gradient-text">Frequently Asked</span> Questions
-                        </h1>
-                        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                            Find answers to common questions about our programming resources, tutorials, and content sharing platform.
+        <section class="container mx-auto px-4 mt-8 mb-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Explore All <span class="gradient-text">Categories</span>
+                </h1>
+                <p class="text-gray-600 text-lg mb-8">
+                    Discover curated content across various topics, from cutting-edge technology to mindful lifestyle choices
+                </p>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="container mx-auto px-4">
+            <div class="grid gap-6 categories-grid">
+                <!-- Technology Category -->
+                <a href="/category/technology" class="category-card glass rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="category-icon bg-blue-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-microchip text-blue-500 text-2xl"></i>
+                            </div>
+                            <span class="px-4 py-1 bg-blue-500/10 text-blue-500 rounded-full text-sm">
+                                24 Articles
+                            </span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3">Technology</h3>
+                        <p class="text-gray-600 mb-6">
+                            Explore the latest in AI, blockchain, cybersecurity, and emerging tech trends shaping our future.
                         </p>
-                        <a href="/pages/contact.html" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                            <span>Still have questions?</span>
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
+                </a>
 
-        <!-- FAQ Categories -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- General Questions -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">General Questions</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">What is InvizHer?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
+                <!-- Design Category -->
+                <a href="/category/design" class="category-card glass rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="category-icon bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-palette text-purple-500 text-2xl"></i>
                             </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                InvizHer is a personal blog focused on sharing programming knowledge, development resources, and coding tutorials. We aim to make technical content accessible to everyone interested in learning to code.
-                            </div>
+                            <span class="px-4 py-1 bg-purple-500/10 text-purple-500 rounded-full text-sm">
+                                18 Articles
+                            </span>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Is the content free?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                Yes! All our content is completely free and accessible to everyone. We believe in making programming education available to all interested learners.
-                            </div>
-                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3">Design</h3>
+                        <p class="text-gray-600 mb-6">
+                            Dive into UI/UX principles, graphic design trends, and creative inspiration for modern designers.
+                        </p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Content & Resources -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">Content & Resources</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">How often is content updated?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
+                <!-- Development Category -->
+                <a href="/category/development" class="category-card glass rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="category-icon bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-code text-green-500 text-2xl"></i>
                             </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                We publish new articles and tutorials regularly, typically 2-3 times per week. The topics cover various programming languages, development tools, and industry best practices.
-                            </div>
+                            <span class="px-4 py-1 bg-green-500/10 text-green-500 rounded-full text-sm">
+                                32 Articles
+                            </span>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Can I request specific topics?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                Absolutely! You can suggest topics through our contact page. We value community input and try to create content based on reader requests.
-                            </div>
-                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3">Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            Master programming languages, frameworks, and best practices for modern development.
+                        </p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Technical Questions -->
-                <div class="glass rounded-2xl p-8">
-                    <h2 class="text-xl font-bold mb-6 gradient-text">Technical Support</h2>
-                    <div class="space-y-4">
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">How do I report issues?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
+                <!-- Lifestyle Category -->
+                <a href="/category/lifestyle" class="category-card glass rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="category-icon bg-red-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-leaf text-red-500 text-2xl"></i>
                             </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                If you find any issues with the content or website, please use our contact form or reach out through GitHub. We appreciate your feedback and work quickly to address any problems.
-                            </div>
+                            <span class="px-4 py-1 bg-red-500/10 text-red-500 rounded-full text-sm">
+                                15 Articles
+                            </span>
                         </div>
-                        
-                        <div class="faq-item cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <h3 class="font-medium">Can I contribute content?</h3>
-                                <button class="faq-icon">
-                                    <i class="fas fa-plus text-blue-500"></i>
-                                </button>
-                            </div>
-                            <div class="faq-answer mt-2 text-gray-600">
-                                While we currently don't accept direct content submissions, you can suggest topics or corrections through our GitHub repository or contact form.
-                            </div>
-                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3">Lifestyle</h3>
+                        <p class="text-gray-600 mb-6">
+                            Discover wellness tips, productivity hacks, and personal growth strategies for a balanced life.
+                        </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
-                <p class="text-gray-600 mb-8">Can't find what you're looking for? Feel free to reach out to us directly.</p>
-                <a href="/pages/contact.html" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                    Contact Us
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Copy your existing footer here -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
             <!-- Grid container with 4 columns -->
@@ -307,6 +265,8 @@
         </div>
     </footer>
 
+
+    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
 <script src="assets/js/secondary.js"></script>
 
