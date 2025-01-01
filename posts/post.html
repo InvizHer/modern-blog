@@ -51,37 +51,49 @@
             <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
         </div>
     </div>
-    <!-- [Header from home page remains the same] -->
+
+    <!-- Enhanced Header -->
     <header class="fixed w-full z-50 transition-all duration-300" id="header">
         <nav class="glass mx-4 my-4 rounded-2xl">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
-                    <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center space-x-4">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="../assets/img/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold gradient-text">InvizHer</span>
-                    </div>
+                    </a>
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-8">
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                            Connect
-                        </button>
+                        <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="posts/" class="text-gray-700 hover:text-blue-500 transition-colors">Posts</a>
+                        <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors">Languages</a>
+                        <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="../pages/about.html" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <a href="../pages/contact.html" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Contact Me
+                        </a>
                     </div>
 
                     <!-- Mobile Menu Button -->
                     <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" id="mobile-menu-button">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
-                        </svg>
+                        <div class="icon-container">
+                            <!-- Original Menu Icon -->
+                            <div class="menu-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                                </svg>
+                            </div>
+                            <!-- Close Icon -->
+                            <div class="close-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -91,14 +103,14 @@
         <div class="lg:hidden hidden" id="mobile-menu">
             <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
                 <nav class="flex flex-col space-y-4">
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
-                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                        Connect
-                    </button>
+                    <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="../posts/" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Posts</a>
+                    <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Languages</a>
+                    <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="../pages/about.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <a href="../pages/contact.html" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Contact Me
+                    </a>
                 </nav>
             </div>
         </div>
@@ -123,9 +135,9 @@
                     <h1 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">Understanding the Impact of AI on Software Development</h1>
                     
                     <div class="flex items-center gap-4">
-                        <img src="https://thumbs.dreamstime.com/z/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg?w=768" alt="Sarah Johnson" class="w-12 h-12 rounded-full ring-2 ring-white/50">
+                        <img src="../assets/img/profile.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full ring-2 ring-white/50">
                         <div>
-                            <div class="font-medium text-lg">Sarah Johnson</div>
+                            <div class="font-medium text-lg">Pavan Magar</div>
                             <div class="text-white/80">December 25, 2024</div>
                         </div>
                     </div>
@@ -296,7 +308,7 @@ function analyzeCode(codeString) {
         <div id="shareAlert" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg z-50">
             <div class="flex items-center gap-2">
                 <i class="fas fa-check"></i>
-                <span>Copied to clipboard!</span>
+                <span>Link Copied to clipboard!</span>
             </div>
         </div>
     </div>
@@ -327,7 +339,7 @@ function analyzeCode(codeString) {
         </div>
     </section>
 
-    <!-- [Footer from home page remains the same] -->
+    <!-- Enhanced Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
             <!-- Grid container with 4 columns -->
@@ -337,25 +349,25 @@ function analyzeCode(codeString) {
                     <div class="flex items-center space-x-4 mb-8">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="../assets/img/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold">InvizHer</span>
                     </div>
                     <p class="text-gray-400 mb-4">
-                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                        Exploring the world of programming and development through providing the thoughtful content.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-youtube"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-telegram"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
@@ -364,11 +376,10 @@ function analyzeCode(codeString) {
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href=".." class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="posts/" class="text-gray-400 hover:text-white transition-colors">Posts</a></li>
+                        <li><a href="../languages.html" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
+                        <li><a href="../categories.html" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
                     </ul>
                 </div>
     
@@ -376,10 +387,9 @@ function analyzeCode(codeString) {
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="../pages/faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="../pages/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../pages/terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
     
@@ -387,10 +397,9 @@ function analyzeCode(codeString) {
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Support</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                        <li><a href="../pages/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="../pages/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../pages/contact.html" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
                     </ul>
                 </div>
             </div>
@@ -402,8 +411,375 @@ function analyzeCode(codeString) {
         </div>
     </footer>
 
+    <div id="cookieConsent" class="fixed max-w-screen-lg w-full left-1/2 -translate-x-1/2 bottom-0 mb-4 mx-auto px-4 transition-all duration-700 ease-in-out translate-y-full opacity-0 z-50">
+        <div class="glass-morphism rounded-2xl p-6 shadow-lg border border-white/20 transform transition-transform duration-500 hover:scale-[1.01]">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold mb-2">🍪 Cookie Preferences</h3>
+                    <p class="text-gray-600 text-sm">We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                </div>
+                <div class="flex flex-row gap-3 min-w-fit">
+                    <button id="customizeBtn" class="px-4 py-2 text-sm border-2 border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Customize
+                    </button>
+                    <button id="acceptAllBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Settings Modal -->
+<div id="cookieModal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm modal-overlay"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4 transform transition-all duration-500 scale-95">
+        <div class="bg-white rounded-2xl p-6 shadow-xl border border-white/20">
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Cookie Settings</h3>
+                <p class="text-gray-600">Configure your cookie preferences</p>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <!-- Essential Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Essential Cookies</h4>
+                        <p class="text-sm text-gray-600">Required for the website to function properly</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" checked disabled class="appearance-none w-12 h-6 rounded-full bg-blue-500 checked:bg-blue-500 transition-all cursor-not-allowed opacity-50">
+                        <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Analytics Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Analytics Cookies</h4>
+                        <p class="text-sm text-gray-600">Help us improve our website by collecting usage information</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="analyticsToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Marketing Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Marketing Cookies</h4>
+                        <p class="text-sm text-gray-600">Used to deliver personalized advertisements</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="marketingToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3">
+                <button id="savePreferencesBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Save Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Scripts -->
-    <script src="../assets/js/secondary.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        
+//===================== ARTICLE PAGE =====================
+
+//share section
+document.addEventListener('DOMContentLoaded', () => {
+    const shareBtn = document.getElementById('shareBtn');
+    const shareDropdown = document.getElementById('shareDropdown');
+    const chevron = document.getElementById('chevron');
+    const shareOptions = document.querySelectorAll('.share-option');
+    const shareUrl = document.getElementById('shareUrl');
+    const copyBtn = document.getElementById('copyBtn');
+    const shareAlert = document.getElementById('shareAlert');
+    
+    // Get the current URL and article title
+    const currentUrl = window.location.href;
+    const articleTitle = document.querySelector('h1')?.textContent || 'Article';
+    
+    // Set the URL in the input field
+    shareUrl.value = currentUrl;
+    
+    let isOpen = false;
+
+    function toggleDropdown() {
+        isOpen = !isOpen;
+        
+        if (isOpen) {
+            shareDropdown.classList.remove('opacity-0', '-translate-y-2', 'invisible');
+            shareDropdown.classList.add('opacity-100', 'translate-y-0');
+            chevron.classList.add('rotate-180');
+        } else {
+            shareDropdown.classList.add('opacity-0', '-translate-y-2', 'invisible');
+            shareDropdown.classList.remove('opacity-100', 'translate-y-0');
+            chevron.classList.remove('rotate-180');
+        }
+    }
+
+    // Toggle dropdown
+    shareBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isOpen && !shareDropdown.contains(e.target) && !shareBtn.contains(e.target)) {
+            toggleDropdown();
+        }
+    });
+
+    // Copy URL functionality
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(currentUrl);
+            
+            // Show success state
+            copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+            shareAlert.classList.remove('hidden');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                copyBtn.innerHTML = '<i class="far fa-copy"></i><span>Copy</span>';
+                shareAlert.classList.add('hidden');
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+    });
+
+    // Share functionality
+    shareOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const platform = option.getAttribute('data-platform');
+            let shareUrl;
+
+            switch(platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(`${articleTitle}\n${currentUrl}`)}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(articleTitle)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(articleTitle)}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${encodeURIComponent(articleTitle)}&body=${encodeURIComponent(`Check out this article:\n${currentUrl}`)}`;
+                    break;
+            }
+
+            if (shareUrl) {
+                window.open(shareUrl, '_blank');
+                toggleDropdown();
+            }
+        });
+    });
+});
+        
+        // table of content
+    // Updated JavaScript for improved TOC visibility timing
+document.addEventListener('DOMContentLoaded', () => {
+    // Elements
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('section[id]');
+    const progressBar = document.getElementById('progress-indicator');
+    const readingProgress = document.getElementById('reading-progress');
+    const currentSection = document.getElementById('current-section');
+    const mobileToc = document.getElementById('mobile-toc');
+    const articleHeader = document.querySelector('header.container'); // Article header
+    const article = document.querySelector('article'); // Main article
+    const articleFooter = document.querySelector('article footer'); // Article footer
+
+    // Calculate article boundaries
+    function getArticleBoundaries() {
+        const headerRect = articleHeader.getBoundingClientRect();
+        const footerRect = articleFooter.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        return {
+            headerTop: headerRect.top,
+            headerBottom: headerRect.bottom,
+            footerTop: footerRect.top,
+            footerBottom: footerRect.bottom,
+            windowHeight: windowHeight
+        };
+    }
+
+    // Update mobile TOC visibility
+    function updateMobileTocVisibility() {
+        const boundaries = getArticleBoundaries();
+
+        // Show TOC when article header is in view or has been scrolled past
+        // Hide TOC when footer comes into view
+        if (boundaries.headerTop <= boundaries.windowHeight && boundaries.footerTop > boundaries.windowHeight) {
+            mobileToc.classList.add('visible');
+        } else {
+            mobileToc.classList.remove('visible');
+        }
+    }
+
+    // Calculate reading progress based on article position
+    function updateReadingProgress() {
+        const articleRect = article.getBoundingClientRect();
+        const headerRect = articleHeader.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate total scrollable distance of the article
+        const totalDistance = article.offsetHeight;
+        
+        // Calculate how far we've scrolled through the article
+        const scrolled = window.pageYOffset + windowHeight - article.offsetTop;
+        
+        // Calculate progress percentage
+        const progress = Math.max(0, Math.min(100, (scrolled / totalDistance) * 100));
+        
+        // Update progress bar and text
+        progressBar.style.width = `${progress}%`;
+        readingProgress.textContent = `${Math.round(progress)}% read`;
+    }
+
+    // Track active section
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                tocLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    if (link.getAttribute('href') === `#${id}`) {
+                        currentSection.textContent = link.textContent;
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '-20% 0px -35% 0px'
+    });
+
+    // Observe all sections
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Smooth scroll to section
+    tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Throttle function
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+
+    // Event listeners with throttling
+    const handleScroll = throttle(() => {
+        updateMobileTocVisibility();
+        updateReadingProgress();
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    // Initial call to set initial state
+    handleScroll();
+});
+       
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch posts data from posts.json
+    fetch('../assets/js/posts.json')
+        .then(response => response.json())
+        .then(data => {
+            const posts = data.posts;
+            
+            // Get current article URL to exclude it from recommendations
+            const currentPath = window.location.pathname;
+            
+            // Filter out current article and get two random articles
+            const otherPosts = posts.filter(post => '/' + post.slug !== currentPath);
+            const randomPosts = [];
+            
+            // Get two random posts
+            for (let i = 0; i < 2 && otherPosts.length > 0; i++) {
+                const randomIndex = Math.floor(Math.random() * otherPosts.length);
+                randomPosts.push(otherPosts.splice(randomIndex, 1)[0]);
+            }
+            
+            // Get container and clear existing content
+            const container = document.getElementById('random-articles');
+            container.innerHTML = '';
+            
+            // Create and append article cards
+            randomPosts.forEach(post => {
+                const articleCard = `
+                    <div class="group">
+                        <a href="/${post.slug}" class="block">
+                            <div class="relative overflow-hidden rounded-xl">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10"></div>
+                                <img 
+                                    src="${post.thumbnail}" 
+                                    alt="${post.title}" 
+                                    class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    onerror="this.src='/api/placeholder/400/320'"
+                                >
+                                <div class="absolute bottom-0 left-0 right-0 p-6 text-white z-20">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">
+                                            ${post.category.split(',')[0].trim()}
+                                        </span>
+                                        <span class="text-sm">${post.readTime}</span>
+                                    </div>
+                                    <h4 class="text-lg font-semibold leading-snug group-hover:text-blue-300 transition-colors">
+                                        ${post.title}
+                                    </h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                
+                container.insertAdjacentHTML('beforeend', articleCard);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching posts:', error);
+            document.getElementById('random-articles').innerHTML = `
+                <div class="col-span-full text-center text-gray-500">
+                    Unable to load recommended articles
+                </div>
+            `;
+        });
+});
+    </script>
 
 </body>
 </html>

@@ -110,7 +110,7 @@
     <!-- Main Content -->
     <main class="pt-28">
         <!-- Hero Section -->
-<section class="container mx-auto px-4 py-10">
+<section class="container mx-auto px-6 py-10">
     <div class="relative">
         <div class="absolute inset-0 glass rounded-3xl"></div>
         
@@ -137,7 +137,7 @@
                     </h1>
 
                     <p class="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
-                        I share my journey through code, document my projects, and provide resources to help fellow developers. From programming tutorials to development insights - let's grow together.
+                        I share my journey through the code, document my projects, and provide resources to help fellow developers. From programming tutorials to development insights - let's grow together.
                     </p>
 
                     <!-- Enhanced CTA Section -->
@@ -589,7 +589,77 @@
 </div>
  
 <script src="assets/js/main.js"></script>
-<script src="assets/js/secondary.js"></script>
+<script>
+
+    
+// ======================= Home page functions ==========================
+async function fetchRecentPosts() {
+    try {
+        const response = await fetch('assets/js/posts.json');
+        const data = await response.json();
+        // Take first 3 posts (9,8,7) without reversing
+        const recentPosts = data.posts.slice(0, 3);
+        displayRecentPosts(recentPosts);
+    } catch (error) {
+        console.error('Error fetching recent posts:', error);
+    }
+}
+
+function createRecentPostCard(post) {
+    // Split categories if it's a string
+    const categories = typeof post.category === 'string' 
+        ? post.category.split(', ') 
+        : post.category;
+    
+    const mainCategory = categories[0]; // Display first category as main
+
+    return `
+        <article class="new-post-card glass-morphism rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+            <div class="relative overflow-hidden aspect-video">
+                <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+
+                    <span class="absolute bottom-4 left-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm rounded-full">
+                        ${mainCategory}
+                    </span>
+                    <span class="absolute bottom-4 right-3 px-3 py-1 text-white text-sm rounded-full">
+                        ${new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    </span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 hover:text-blue-500 transition-colors line-clamp-2">
+                    <a href="/post/${post.slug}">${post.title}</a>
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">${post.description}</p>
+                <div class="flex flex-wrap gap-2">
+                    ${categories
+                        .filter(cat => cat !== mainCategory)
+                        .map(cat => `
+                            <span class="text-sm text-gray-500">#${cat}</span>
+                        `).join('')}
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+function displayRecentPosts(posts) {
+    const recentPostsGrid = document.getElementById('recentPostsGrid');
+    if (!recentPostsGrid) return;
+
+    recentPostsGrid.innerHTML = posts.map(post => createRecentPostCard(post)).join('');
+    
+    // Initialize scroll reveal for new elements
+    scrollReveal();
+}
+
+// Add this to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    fetchRecentPosts();
+});
+
+</script>
 
 </body>
 </html>

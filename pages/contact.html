@@ -36,7 +36,7 @@
 
 </head>
 <body class="bg-gray-50">
-    <!-- Dynamic Background (same as home) -->
+    <!-- Dynamic Background -->
     <div class="fixed inset-0 -z-10 overflow-hidden">
         <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
             <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
@@ -45,30 +45,30 @@
         </div>
     </div>
 
-    <!-- Header (same as home) -->
+    <!-- Enhanced Header -->
     <header class="fixed w-full z-50 transition-all duration-300" id="header">
         <nav class="glass mx-4 my-4 rounded-2xl">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
-                    <div class="flex items-center space-x-4">
+                    <a href=".." class="flex items-center space-x-4">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="../assets/img/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold gradient-text">InvizHer</span>
-                    </div>
+                    </a>
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center space-x-8">
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Featured</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Recent Posts</a>
-                        <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
-                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                            Connect
-                        </button>
+                        <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                        <a href="../posts/" class="text-gray-700 hover:text-blue-500 transition-colors">Posts</a>
+                        <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors">Languages</a>
+                        <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
+                        <a href="contact.html" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                            Contact Me
+                        </a>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -96,14 +96,14 @@
         <div class="lg:hidden hidden" id="mobile-menu">
             <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
                 <nav class="flex flex-col space-y-4">
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Featured</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Recent Posts</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
-                    <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                        Connect
-                    </button>
+                    <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
+                    <a href="../posts/" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Posts</a>
+                    <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Languages</a>
+                    <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
+                    <a href="contact.html" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        Contact Me
+                    </a>
                 </nav>
             </div>
         </div>
@@ -241,6 +241,7 @@
         </section>
     </main>
 
+    <!-- Enhanced Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 py-10">
             <!-- Grid container with 4 columns -->
@@ -250,25 +251,25 @@
                     <div class="flex items-center space-x-4 mb-8">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
-                            <img src="inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
+                            <img src="../assets/img/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
                         <span class="text-xl font-bold">InvizHer</span>
                     </div>
                     <p class="text-gray-400 mb-4">
-                        Exploring the intersection of technology, design, and lifestyle through thoughtful content.
+                        Exploring the world of programming and development through providing the thoughtful content.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-youtube"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-telegram"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
@@ -277,11 +278,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Featured Posts</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href=".." class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../posts" class="text-gray-400 hover:text-white transition-colors">Posts</a></li>
+                        <li><a href="../languages.html" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
+                        <li><a href="../categories.html" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
                     </ul>
                 </div>
     
@@ -289,10 +289,9 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
     
@@ -300,10 +299,9 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Support</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Support</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Report Issue</a></li>
                     </ul>
                 </div>
             </div>
@@ -315,9 +313,222 @@
         </div>
     </footer>
 
+    <div id="cookieConsent" class="fixed max-w-screen-lg w-full left-1/2 -translate-x-1/2 bottom-0 mb-4 mx-auto px-4 transition-all duration-700 ease-in-out translate-y-full opacity-0 z-50">
+        <div class="glass-morphism rounded-2xl p-6 shadow-lg border border-white/20 transform transition-transform duration-500 hover:scale-[1.01]">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold mb-2">🍪 Cookie Preferences</h3>
+                    <p class="text-gray-600 text-sm">We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                </div>
+                <div class="flex flex-row gap-3 min-w-fit">
+                    <button id="customizeBtn" class="px-4 py-2 text-sm border-2 border-gray-300 text-gray-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Customize
+                    </button>
+                    <button id="acceptAllBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cookie Settings Modal -->
+<div id="cookieModal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm modal-overlay"></div>
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4 transform transition-all duration-500 scale-95">
+        <div class="bg-white rounded-2xl p-6 shadow-xl border border-white/20">
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Cookie Settings</h3>
+                <p class="text-gray-600">Configure your cookie preferences</p>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <!-- Essential Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Essential Cookies</h4>
+                        <p class="text-sm text-gray-600">Required for the website to function properly</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" checked disabled class="appearance-none w-12 h-6 rounded-full bg-blue-500 checked:bg-blue-500 transition-all cursor-not-allowed opacity-50">
+                        <span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Analytics Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Analytics Cookies</h4>
+                        <p class="text-sm text-gray-600">Help us improve our website by collecting usage information</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="analyticsToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+
+                <!-- Marketing Cookies -->
+                <div class="flex items-center justify-between p-4 rounded-xl bg-gray-50 transform transition-transform duration-300 hover:scale-[1.01]">
+                    <div>
+                        <h4 class="font-medium mb-1">Marketing Cookies</h4>
+                        <p class="text-sm text-gray-600">Used to deliver personalized advertisements</p>
+                    </div>
+                    <div class="relative">
+                        <input type="checkbox" id="marketingToggle" class="toggle-checkbox appearance-none w-12 h-6 rounded-full bg-gray-300 checked:bg-blue-500 transition-all cursor-pointer">
+                        <span class="toggle-dot absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 translate-x-0"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-3">
+                <button id="savePreferencesBtn" class="px-6 py-2 text-sm bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Save Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
-<script src="assets/js/secondary.js"></script>
+    <script src="../assets/js/main.js"></script>
+<script>
+
+    // ============================ Contact Page ======================
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    const submitIcon = document.getElementById('submitIcon');
+    const alertContainer = document.getElementById('formAlert');
+
+    // Form validation
+    function validateForm() {
+        let isValid = true;
+        const errors = {};
+
+        // Reset previous errors
+        document.querySelectorAll('.error-message').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+
+        // Validate name
+        const name = document.getElementById('name');
+        if (!name.value.trim()) {
+            errors.name = 'Name is required';
+            isValid = false;
+        }
+
+        // Validate email
+        const email = document.getElementById('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.value.trim()) {
+            errors.email = 'Email is required';
+            isValid = false;
+        } else if (!emailRegex.test(email.value.trim())) {
+            errors.email = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        // Validate message
+        const message = document.getElementById('message');
+        if (!message.value.trim()) {
+            errors.message = 'Message is required';
+            isValid = false;
+        }
+
+        // Show errors if any
+        Object.keys(errors).forEach(field => {
+            const input = document.getElementById(field);
+            const errorElement = input.parentElement.querySelector('.error-message');
+            input.classList.add('error');
+            errorElement.textContent = errors[field];
+            errorElement.classList.remove('hidden');
+        });
+
+        return isValid;
+    }
+
+    // Show alert message
+    function showAlert(message, type) {
+        alertContainer.className = `rounded-lg p-4 mb-6 text-sm ${type === 'success' ? 'alert-success' : 'alert-error'}`;
+        alertContainer.textContent = message;
+        alertContainer.classList.remove('hidden');
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            alertContainer.classList.add('hidden');
+        }, 5000);
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+            showAlert('Please fill in all required fields correctly.', 'error');
+            return;
+        }
+
+        // Show loading state
+        submitButton.disabled = true;
+        submitText.textContent = 'Sending...';
+        submitSpinner.classList.remove('hidden');
+        submitIcon.classList.add('hidden');
+
+        try {
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                social: document.getElementById('social').value,
+                message: document.getElementById('message').value
+            };
+
+            // Construct email body
+            const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Social Media: ${formData.social}
+Message:
+
+${formData.message}
+            `.trim();
+
+            // Open email client
+            window.location.href = `mailto:invizher@gmail.com?subject=Contact From ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+
+            // Show success message
+            showAlert('Sending message...', 'success');
+            form.reset();
+
+        } catch (error) {
+            showAlert('An error occurred. Please try again later.', 'error');
+        } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            submitText.textContent = 'Send Message';
+            submitSpinner.classList.add('hidden');
+            submitIcon.classList.remove('hidden');
+        }
+    });
+
+    // Add input animation for better user experience
+    document.querySelectorAll('.form-input').forEach(input => {
+        // Ensure proper label position on page load if input has value
+        if (input.value) {
+            input.classList.add('has-value');
+        }
+
+        // Handle input changes
+        input.addEventListener('input', function() {
+            if (this.value) {
+                this.classList.add('has-value');
+            } else {
+                this.classList.remove('has-value');
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
