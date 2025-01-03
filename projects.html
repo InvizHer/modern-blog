@@ -29,14 +29,14 @@
 
 /* Modern Glass Effect */
 .glass {
-    background: rgba(255, 255, 255, 0.288);
+    background: rgba(255, 255, 255, 0.19);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.515);
 }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.288);
+            background: rgba(255, 255, 255, 0.19);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.515);
@@ -209,9 +209,9 @@
     <!-- Dynamic Background -->
     <div class="fixed inset-0 -z-10 overflow-hidden">
         <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
-            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl"></div>
         </div>
     </div>
     
@@ -324,7 +324,7 @@
             </div>
 
             <footer class="text-center mt-8 md:mt-16">
-                <p class="text-gray-600 text-sm glass rounded-full px-4 p-2 inline-block">© 2025 InvizHer. All rights reserved.</p>
+                <p class="text-gray-600 text-sm glass rounded-full px-4 p-2 inline-block">© 2025 - InvizHer</p>
             </footer>
         </main>
     </div>
@@ -339,51 +339,64 @@
         };
 
         function showToast(message, duration = 4000) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            const progress = document.getElementById('toast-progress');
-            
-            if (toast.timeout) clearTimeout(toast.timeout);
-            
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            progress.style.transition = `width ${duration}ms linear`;
-            progress.style.width = '100%';
-            
-            setTimeout(() => {
-                progress.style.width = '0%';
-            }, 100);
-
-            toast.timeout = setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => {
-                    progress.style.transition = 'none';
-                    progress.style.width = '100%';
-                }, 600);
-            }, duration);
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    const progress = document.getElementById('toast-progress');
+    
+    // Clear any existing timeout and animation
+    if (toast.timeout) clearTimeout(toast.timeout);
+    if (progress.animation) progress.animation.cancel();
+    
+    toastMessage.textContent = message;
+    toast.classList.add('show');
+    
+    // Set up the progress animation
+    progress.style.transition = 'none';
+    progress.style.width = '100%';
+    
+    // Animate the progress bar
+    progress.animation = progress.animate(
+        [
+            { width: '100%' },
+            { width: '0%' }
+        ],
+        {
+            duration: duration,
+            easing: 'linear',
+            fill: 'forwards'
         }
+    );
 
-        document.querySelectorAll('[data-link]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const linkType = this.dataset.link;
-                const destination = links[linkType];
-                
-                let countdown = 50;
-                showToast(`Redirecting to ${linkType} within ${countdown}s`);
-                
-                const countdownInterval = setInterval(() => {
-                    countdown--;
-                    if (countdown > 0) {
-                        showToast(`Redirecting to ${linkType} within ${countdown}s`);
-                    } else {
-                        clearInterval(countdownInterval);
-                        window.location.href = destination;
-                    }
-                }, 1000);
-            });
-        });
+    toast.timeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, duration);
+}
+
+// Update the click event listener section
+document.querySelectorAll('[data-link]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const linkType = this.dataset.link;
+        const destination = links[linkType];
+        
+        let countdown = 4;
+        const totalDuration = countdown * 1000; // 4 seconds in milliseconds
+        
+        showToast(`Redirecting to ${linkType} within ${countdown}s`, totalDuration);
+        
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            if (countdown > 0) {
+                // Update only the message, not the progress bar
+                document.getElementById('toast-message').textContent = 
+                    `Redirecting to ${linkType} within ${countdown}s`;
+            } else {
+                clearInterval(countdownInterval);
+                window.location.href = destination;
+            }
+        }, 1000);
+    });
+});
 
         // Animate social icons
         function animateSocialIcons() {
