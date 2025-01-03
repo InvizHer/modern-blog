@@ -8,215 +8,453 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
     
     <style>
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: #0f172a;
+            font-family: "Lexend", serif;
+    font-weight: 400;
+    font-size: 16px;
+            background: #f8fafc;
             min-height: 100vh;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* Modern Glass Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.288);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.515);
+}
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.288);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.515);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            max-width: 100%;
+            opacity: 0;
+            transform: translateX(-50px);
+            pointer-events: none;
+        }
+
+        .glass-card.slide-in {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
         }
 
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .floating {
-            animation: floating 3s ease-in-out infinite;
+        .profile-section {
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.3s;
         }
 
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-            animation: blob-move 15s infinite alternate;
+        .social-icon {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes blob-move {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.2); }
-            66% { transform: translate(-20px, 20px) scale(0.8); }
-            100% { transform: translate(0, 0) scale(1); }
+        .social-icon.pop-in {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        .shine {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .shine::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 45%,
-                rgba(255, 255, 255, 0.1) 50%,
-                transparent 55%
-            );
-            transform: translate(-100%, -100%);
-            transition: all 0.6s ease;
-        }
-
-        .shine:hover::after {
-            transform: translate(100%, 100%);
+        .social-icon:hover {
+            transform: scale(1.1);
         }
 
         .icon-glow {
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+            filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.1));
         }
 
-        .glow-text {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        .toast {
+            position: fixed;
+            left: 50%;
+            top: 2rem;
+            transform: translate(-50%, -150%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 
+                0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1000;
+            text-align: center;
+            min-width: min(300px, 90vw);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .toast.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .toast-icon {
+            font-size: 1.25rem;
+            color: #4f46e5;
+        }
+
+        .toast-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #4f46e5, #818cf8);
+            border-radius: 0 0 1.5rem 1.5rem;
+            width: 100%;
+            transform-origin: left;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .links-section {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            .links-section {
+                padding: 0 0.5rem;
+            }
+
+            .glass-card {
+                margin-bottom: 0.75rem;
+            }
+            
+            .social-icon {
+                transform: scale(0.9);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .glass-card {
+                padding: 0.85rem !important;
+            }
+
+            .glass-card .icon-container {
+                width: 2.25rem !important;
+                height: 2.25rem !important;
+            }
+
+            .glass-card .text-label {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="relative">
-    <!-- Animated Blobs -->
-    <div class="blob w-96 h-96 bg-blue-500/30 top-0 left-0"></div>
-    <div class="blob w-96 h-96 bg-purple-500/30 bottom-0 right-0"></div>
-    <div class="blob w-80 h-80 bg-pink-500/30 top-1/2 left-1/2"></div>
+<body>
+    <!-- Dynamic Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute top-0 left-0 w-screen h-screen opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -2s"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: -4s"></div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div id="toast" class="toast">
+            <span id="toast-message"></span>
+            <i class="fas fa-arrow-right toast-icon"></i>
+            <div class="toast-progress" id="toast-progress"></div>
+        </div>
 
-    <main class="container mx-auto px-4 py-16 max-w-2xl relative">
-        <!-- Profile Section -->
-        <div class="glass rounded-3xl p-8 mb-16 text-center relative overflow-hidden">
-            <!-- Profile Image -->
-            <div class="relative w-32 h-32 mx-auto mb-8">
-                <div class="absolute inset-[3px] glass rounded-xl p-1">
-                    <img src="../assets/img/profile.jpg" alt="Profile" class="rounded-xl w-full h-full object-cover">
+        <main class="container mx-auto pt-8 md:pt-10 relative">
+            <div class="rounded-3xl p-8 mb-8 md:mb-16 text-center relative overflow-hidden profile-section">
+                <div class="relative w-24 h-24 md:w-32 md:h-32 mx-auto mb-6 md:mb-8">
+                    <div class="absolute inset-[3px] glass rounded-xl p-1">
+                        <img src="../assets/img/profile.jpg" alt="Profile" class="rounded-xl w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <h1 class="text-3xl md:text-4xl font-bold mb-2 md:mb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">
+                    InvizHer
+                </h1>
+                <p class="text-gray-600 mb-6 md:mb-8">Also Known As Pavan Magar</p>
+
+                <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
+                    <a href="#" class="social-icon w-10 h-10 glass rounded-lg flex items-center justify-center text-blue-600 transition-transform icon-glow" data-link="github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon w-10 h-10 glass rounded-lg flex items-center justify-center text-pink-600 transition-transform icon-glow" data-link="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon w-10 h-10 glass rounded-lg flex items-center justify-center text-blue-600 transition-transform icon-glow" data-link="telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" class="social-icon w-10 h-10 glass rounded-lg flex items-center justify-center text-red-600 transition-transform icon-glow" data-link="youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Name and Bio -->
-            <h1 class="text-4xl font-bold mb-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-                InvizHer
-            </h1>
-            <p class="text-gray-400 mb-8">Also Known As Pavan Magar</p>
+            <div class="links-section space-y-6 px-6">
+                <a href="#" class="block" data-link="website">
+                    <div class="glass-card hover:border-blue-500 rounded-2xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="icon-container w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center icon-glow">
+                                    <i class="fas fa-globe text-white"></i>
+                                </div>
+                                <span class="text-label text-gray-800 font-medium">Website</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-600"></i>
+                        </div>
+                    </div>
+                </a>
 
-            <!-- Social Icons -->
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="w-10 h-10 glass rounded-lg flex items-center justify-center text-blue-400 hover:scale-110 transition-transform icon-glow">
-                    <i class="fab fa-github"></i>
+                <a href="#" class="block" data-link="youtube">
+                    <div class="glass-card hover:border-blue-500 rounded-2xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="icon-container w-10 h-10 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center icon-glow">
+                                    <i class="fab fa-youtube text-white"></i>
+                                </div>
+                                <span class="text-label text-gray-800 font-medium">YouTube</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-600"></i>
+                        </div>
+                    </div>
                 </a>
-                <a href="#" class="w-10 h-10 glass rounded-lg flex items-center justify-center text-pink-400 hover:scale-110 transition-transform icon-glow">
-                    <i class="fab fa-instagram"></i>
+
+                <a href="#" class="block" data-link="instagram">
+                    <div class="glass-card hover:border-blue-500 rounded-2xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="icon-container w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center icon-glow">
+                                    <i class="fab fa-instagram text-white"></i>
+                                </div>
+                                <span class="text-label text-gray-800 font-medium">Instagram</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-600"></i>
+                        </div>
+                    </div>
                 </a>
-                <a href="#" class="w-10 h-10 glass rounded-lg flex items-center justify-center text-blue-400 hover:scale-110 transition-transform icon-glow">
-                    <i class="fab fa-telegram"></i>
+
+                <a href="#" class="block" data-link="telegram">
+                    <div class="glass-card hover:border-blue-500 rounded-2xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="icon-container w-10 h-10 rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center icon-glow">
+                                    <i class="fab fa-telegram text-white"></i>
+                                </div>
+                                <span class="text-label text-gray-800 font-medium">Telegram</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-600"></i>
+                        </div>
+                    </div>
                 </a>
-                <a href="#" class="w-10 h-10 glass rounded-lg flex items-center justify-center text-red-400 hover:scale-110 transition-transform icon-glow">
-                    <i class="fab fa-youtube"></i>
+
+                <a href="#" class="block" data-link="github">
+                    <div class="glass-card hover:border-blue-500 rounded-2xl p-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="icon-container w-10 h-10 rounded-xl bg-gradient-to-r from-gray-700 to-gray-900 flex items-center justify-center icon-glow">
+                                    <i class="fab fa-github text-white"></i>
+                                </div>
+                                <span class="text-label text-gray-800 font-medium">GitHub</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-gray-600"></i>
+                        </div>
+                    </div>
                 </a>
             </div>
-        </div>
 
-        <!-- Links Section -->
-        <div class="space-y-4">
-            <!-- Website -->
-            <a href="#" class="block">
-                <div class="glass-card rounded-2xl p-4 shine">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500/50 to-purple-500/50 flex items-center justify-center icon-glow">
-                                <i class="fas fa-globe text-white"></i>
-                            </div>
-                            <span class="text-gray-200 font-medium">Website</span>
-                        </div>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-            </a>
+            <footer class="text-center mt-8 md:mt-16">
+                <p class="text-gray-600 text-sm glass rounded-full px-4 p-2 inline-block">© 2025 InvizHer. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
 
-            <!-- YouTube -->
-            <a href="#" class="block">
-                <div class="glass-card rounded-2xl p-4 shine">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-red-500/50 to-pink-500/50 flex items-center justify-center icon-glow">
-                                <i class="fab fa-youtube text-white"></i>
-                            </div>
-                            <span class="text-gray-200 font-medium">YouTube</span>
-                        </div>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-            </a>
+    <script>
+        const links = {
+            website: 'https://your-website.com',
+            youtube: 'https://youtube.com/your-channel',
+            instagram: 'https://instagram.com/your-profile',
+            telegram: 'https://t.me/your-username',
+            github: 'https://github.com/your-username'
+        };
 
-            <!-- Instagram -->
-            <a href="#" class="block">
-                <div class="glass-card rounded-2xl p-4 shine">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500/50 to-pink-500/50 flex items-center justify-center icon-glow">
-                                <i class="fab fa-instagram text-white"></i>
-                            </div>
-                            <span class="text-gray-200 font-medium">Instagram</span>
-                        </div>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-            </a>
+        function showToast(message, duration = 4000) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const progress = document.getElementById('toast-progress');
+            
+            if (toast.timeout) clearTimeout(toast.timeout);
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            progress.style.transition = `width ${duration}ms linear`;
+            progress.style.width = '100%';
+            
+            setTimeout(() => {
+                progress.style.width = '0%';
+            }, 100);
 
-            <!-- Telegram -->
-            <a href="#" class="block">
-                <div class="glass-card rounded-2xl p-4 shine">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-400/50 to-blue-600/50 flex items-center justify-center icon-glow">
-                                <i class="fab fa-telegram text-white"></i>
-                            </div>
-                            <span class="text-gray-200 font-medium">Telegram</span>
-                        </div>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-            </a>
+            toast.timeout = setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    progress.style.transition = 'none';
+                    progress.style.width = '100%';
+                }, 600);
+            }, duration);
+        }
 
-            <!-- GitHub -->
-            <a href="#" class="block">
-                <div class="glass-card rounded-2xl p-4 shine">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-gray-700/50 to-gray-900/50 flex items-center justify-center icon-glow">
-                                <i class="fab fa-github text-white"></i>
-                            </div>
-                            <span class="text-gray-200 font-medium">GitHub</span>
-                        </div>
-                        <i class="fas fa-arrow-right text-gray-400"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
+        document.querySelectorAll('[data-link]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const linkType = this.dataset.link;
+                const destination = links[linkType];
+                
+                let countdown = 50;
+                showToast(`Redirecting to ${linkType} within ${countdown}s`);
+                
+                const countdownInterval = setInterval(() => {
+                    countdown--;
+                    if (countdown > 0) {
+                        showToast(`Redirecting to ${linkType} within ${countdown}s`);
+                    } else {
+                        clearInterval(countdownInterval);
+                        window.location.href = destination;
+                    }
+                }, 1000);
+            });
+        });
 
-        <!-- Footer -->
-        <footer class="text-center mt-16">
-            <p class="text-gray-500 text-sm glass rounded-full px-4 p-2 inline-block">© 2025 InvizHer</p>
-        </footer>
-    </main>
+        // Animate social icons
+        function animateSocialIcons() {
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach((icon, index) => {
+                setTimeout(() => {
+                    icon.classList.add('pop-in');
+                }, 800 + (index * 150)); // Start after profile section animation, stagger by 150ms
+            });
+        }
+
+        // Animate cards sequentially with smooth transitions
+        function animateCards() {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.classList.add('slide-in');
+                }, 1400 + (index * 200)); // Start after social icons, stagger by 200ms
+            });
+        }
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start animation sequence
+            setTimeout(animateSocialIcons, 300); // Start after profile section begins
+            setTimeout(animateCards, 600); // Start after social icons begin
+        });
+
+        // Re-animate cards when they come into view
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('slide-in')) {
+                    const card = entry.target;
+                    const index = Array.from(card.parentElement.parentElement.children).indexOf(card.parentElement);
+                    
+                    setTimeout(() => {
+                        card.classList.add('slide-in');
+                    }, index * 200); // Stagger by 200ms
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for scroll-based animations
+        document.querySelectorAll('.glass-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Handle window resize for responsive animations
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const cards = document.querySelectorAll('.glass-card');
+                cards.forEach(card => {
+                    card.style.transition = 'none';
+                    card.classList.remove('slide-in');
+                    
+                    requestAnimationFrame(() => {
+                        card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                        card.classList.add('slide-in');
+                    });
+                });
+            }, 250);
+        });
+    </script>
 </body>
 </html>
