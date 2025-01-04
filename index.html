@@ -3,36 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Blog | Discover Amazing Content</title>
+    <title>InvizHer | Programming Tutorials, Development Resources & Coding Projects</title>
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Discover thought-provoking articles on technology, lifestyle, and design. Join our community of curious minds and explore curated content that inspires growth.">
-    <meta name="keywords" content="blog, modern blog, technology articles, lifestyle blog, design insights, programming tutorials">
+    <meta name="description" content="Discover expert programming tutorials, development resources, and coding projects. Learn web development, mobile app development, and access free coding materials to enhance your development skills.">
+    <meta name="keywords" content="programming tutorials, web development, coding resources, development projects, mobile app development, JavaScript tutorials, Python programming, React.js, Node.js, MongoDB">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="ModernBlog Team">
-    <link rel="canonical" href="https://yourdomain.com">
+    <meta name="author" content="InvizHer">
+    <link rel="canonical" href="https://invizher.com">
     
-    <!-- Social Media Meta Tags -->
+    <!-- Enhanced Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Modern Blog | Your Daily Source of Inspiration">
-    <meta property="og:description" content="Discover thought-provoking articles on technology, lifestyle, and design. Join our community of curious minds.">
-    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
-    <meta property="og:url" content="https://yourdomain.com">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="InvizHer">
+    <meta property="og:title" content="InvizHer | Programming Tutorials & Development Resources">
+    <meta property="og:description" content="Access expert programming tutorials, development resources, and real-world coding projects. Level up your development skills with comprehensive guides and free coding materials.">
+    <meta property="og:image" content="https://invizher.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://invizher.com">
     
-    <!-- Tailwind CSS -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="InvizHer | Programming Tutorials & Development Resources">
+    <meta name="twitter:description" content="Access expert programming tutorials, development resources, and real-world coding projects. Level up your development skills with comprehensive guides.">
+    <meta name="twitter:image" content="https://invizher.com/assets/img/twitter-card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/profile-pic.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/profile-pic.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/profile-pic.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "InvizHer",
+        "url": "https://invizher.com",
+        "description": "Programming tutorials, development resources, and coding projects to enhance your development skills.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://invizher.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "InvizHer",
+        "url": "https://invizher.com",
+        "sameAs": [
+            "https://github.com/PavanMagar",
+            "https://youtube.com/@invizher",
+            "https://t.me/invizher",
+            "https://instagram.com/invizher"
+        ]
+    }
+    </script>
+    
+    <!-- Existing CSS and Font imports -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="assets/css/primary.css" >
-
+    <link rel="stylesheet" href="assets/css/primary.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
+
 <body class="bg-gray-50">
     <!-- Dynamic Background -->
     <div class="fixed inset-0 -z-10 overflow-hidden">
@@ -44,7 +83,7 @@
     </div>
 
     <!-- Enhanced Header -->
-    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+    <header class="fixed w-full z-50 transition-all duration-300" id="header" role="banner">
         <nav class="glass mx-4 my-4 rounded-2xl">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
@@ -58,7 +97,7 @@
                     </a>
 
                     <!-- Desktop Navigation -->
-                    <div class="hidden lg:flex items-center space-x-8">
+                    <div class="hidden lg:flex items-center space-x-8" role="menu">
                         <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
                         <a href="posts/" class="text-gray-700 hover:text-blue-500 transition-colors">Posts</a>
                         <a href="languages.html" class="text-gray-700 hover:text-blue-500 transition-colors">Languages</a>
@@ -91,7 +130,7 @@
         </nav>
 
         <!-- Enhanced Mobile Menu -->
-        <div class="lg:hidden hidden" id="mobile-menu">
+        <div class="lg:hidden hidden" id="mobile-menu" role="menu">
             <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
                 <nav class="flex flex-col space-y-4">
                     <a href="#" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
@@ -108,7 +147,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-28">
+    <main class="pt-28" role="main">
         <!-- Hero Section -->
 <section class="container mx-auto px-4 py-8">
     <div class="relative">
@@ -242,8 +281,8 @@
                 <div class="topic-icon bg-gradient-to-r from-blue-500 to-purple-500 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform">
                     <i class="fas fa-code text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Programming Languages</h3>
-                <p class="text-gray-600 mb-4">Master modern programming languages</p>
+                <h3 class="text-xl font-bold mb-3">Languages</h3>
+                <p class="text-gray-600 mb-4">Explore programming languages</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -275,7 +314,7 @@
                     <i class="fas fa-th-large text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Categories</h3>
-                <p class="text-gray-600 mb-4">Explore diverse tech categories</p>
+                <p class="text-gray-600 mb-4">Explore all main categories</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -307,7 +346,7 @@
                     <i class="fas fa-project-diagram text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Projects</h3>
-                <p class="text-gray-600 mb-4">Build real-world applications</p>
+                <p class="text-gray-600 mb-4">Builded real-world applications</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -339,7 +378,7 @@
                     <i class="fas fa-book text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Resources</h3>
-                <p class="text-gray-600 mb-4">Access learning materials</p>
+                <p class="text-gray-600 mb-4">Access of free code materials</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -434,7 +473,7 @@
     </main>
 
     <!-- Enhanced Footer -->
-    <footer class="bg-gray-900 text-white">
+    <footer class="bg-gray-900 text-white" role="contentinfo">
         <div class="container mx-auto px-4 py-10">
             <!-- Grid container with 4 columns -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -505,7 +544,7 @@
         </div>
     </footer>
 
-    <div id="cookieConsent" class="fixed max-w-screen-lg w-full left-1/2 -translate-x-1/2 bottom-0 mb-4 mx-auto px-4 transition-all duration-700 ease-in-out translate-y-full opacity-0 z-50">
+    <div id="cookieConsent" class="fixed max-w-screen-lg w-full left-1/2 -translate-x-1/2 bottom-0 mb-4 mx-auto px-4 transition-all duration-700 ease-in-out translate-y-full opacity-0 z-50" role="alert">
         <div class="glass-morphism rounded-2xl p-6 shadow-lg border border-white/20 transform transition-transform duration-500 hover:scale-[1.01]">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="flex-1">
@@ -525,7 +564,7 @@
     </div>
     
     <!-- Cookie Settings Modal -->
-<div id="cookieModal" class="fixed inset-0 z-50 hidden">
+<div id="cookieModal" class="fixed inset-0 z-50 hidden" role="dialog">
     <div class="fixed inset-0 bg-black/50 backdrop-blur-sm modal-overlay"></div>
     <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4 transform transition-all duration-500 scale-95">
         <div class="bg-white rounded-2xl p-6 shadow-xl border border-white/20">
@@ -607,7 +646,7 @@ function createRecentPostCard(post) {
     const mainCategory = categories[0]; // Display first category as main
 
     return `
-        <article class="new-post-card glass-morphism rounded-2xl overflow-hidden shadow-sm scroll-reveal">
+        <article class="new-post-card glass-morphism rounded-2xl overflow-hidden shadow-sm scroll-reveal" role="article">
             <div class="relative overflow-hidden aspect-video">
                 <img src="${post.thumbnail}" alt="${post.title}" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
