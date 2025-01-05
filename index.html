@@ -187,58 +187,33 @@
                     </div>
                 </div>
 
-                <!-- Visual Section - Now Responsive -->
-                <div class="relative mt-12 lg:mt-0">
-                    <!-- 3D Floating Cards Effect -->
-                    <div class="relative h-[400px] sm:h-[500px]">
-                        <!-- Technology Cards - Adjusted for responsive design -->
-                        <div class="absolute top-10 right-0 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform rotate-6 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -1s">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                                    <i class="fab fa-react text-blue-500 text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">React.js</h3>
-                                    <p class="text-xs sm:text-sm text-gray-600">Frontend</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-40 left-0 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform -rotate-6 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -2s">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                                    <i class="fab fa-node-js text-green-500 text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">Node.js</h3>
-                                    <p class="text-xs sm:text-sm text-gray-600">Backend</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="absolute bottom-10 lg:bottom-20 right-10 w-48 sm:w-64 glass-morphism p-4 rounded-xl transform rotate-3 hover:rotate-0 transition-transform cursor-pointer animate-float" style="animation-delay: -3s">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-8 sm:w-10 h-8 sm:h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                                    <i class="fas fa-database text-purple-500 text-lg sm:text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-medium text-sm sm:text-base">MongoDB</h3>
-                                    <p class="text-xs sm:text-sm text-gray-600">Database</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Central Circle with animated border - Responsive sizing -->
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            <div class="relative w-24 h-24 sm:w-32 sm:h-32">
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="animation-duration: 3s"></div>
-                                <div class="absolute inset-1 bg-white rounded-full flex items-center justify-center">
-                                    <i class="fas fa-code text-2xl sm:text-3xl gradient-text"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Visual Section -->
+<div class="relative lg:mt-0">
+    <!-- Main Content Container -->
+    <div class="relative h-[320px] sm:h-[550px] overflow-hidden">
+        <!-- Central Code Editor -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[320px] bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+            <!-- Editor Header -->
+            <div class="flex items-center justify-between px-4 py-3 border-b border-gray-800">
+                <div class="flex items-center space-x-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
                 </div>
+                <div class="text-xs text-gray-500">main.js</div>
+            </div>
+            <!-- Code Content -->
+            <div class="p-4 font-mono text-sm">
+                <div class="text-blue-400">const</div>
+                <div class="pl-4 text-purple-400">developer = {</div>
+                <div class="pl-8 text-gray-300">name: <span class="text-green-400">'invizher'</span>,</div>
+                <div class="pl-8 text-gray-300">skills: [<span class="text-green-400">'code', 'learn', 'share'</span>],</div>
+                <div class="pl-8 text-gray-300">status: <span class="text-yellow-400">'coding...'</span></div>
+                <div class="pl-4 text-purple-400">}</div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -282,7 +257,7 @@
                     <i class="fas fa-code text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Languages</h3>
-                <p class="text-gray-600 mb-4">Explore programming languages</p>
+                <p class="text-gray-600 mb-4">Explore multiple programming languages and their ecosystems</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -314,7 +289,7 @@
                     <i class="fas fa-th-large text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Categories</h3>
-                <p class="text-gray-600 mb-4">Explore all main categories</p>
+                <p class="text-gray-600 mb-4">Browse through various development topics and domains</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -346,7 +321,7 @@
                     <i class="fas fa-project-diagram text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Projects</h3>
-                <p class="text-gray-600 mb-4">Builded real-world applications</p>
+                <p class="text-gray-600 mb-4">Real-world projects with complete source code and guides</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
@@ -378,7 +353,7 @@
                     <i class="fas fa-book text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">Resources</h3>
-                <p class="text-gray-600 mb-4">Access of free code materials</p>
+                <p class="text-gray-600 mb-4">Curated collection of development tools and resources</p>
                 <div class="space-y-2 mb-6">
                     <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-check-circle text-blue-500 mr-2"></i>
