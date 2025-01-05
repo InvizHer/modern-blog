@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts | InvizHer</title>
+    <title>Posts | InvizHer - Programming Tutorials, Projects & Resources</title>
     
-    <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="Discover in-depth programming tutorials, coding resources, and development guides. Learn programming languages, best practices, and explore real-world projects.">
-    <meta name="keywords" content="programming tutorials, coding resources, web development, software engineering, programming languages, coding projects, developer blog">
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Explore our collection of in-depth programming tutorials, coding projects, and development resources. Learn programming concepts, access free coding materials, and enhance your development skills with practical guides and examples.">
+    <meta name="keywords" content="programming tutorials, coding projects, web development, software engineering, programming resources, coding tutorials, development guides, programming blog, coding examples, developer resources">
+    <meta name="author" content="InvizHer">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Posts | InvizHer">
-    <meta property="og:description" content="Discover in-depth programming tutorials, coding resources, and development guides. Learn programming languages, best practices, and explore real-world projects.">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="InvizHer">
+    <meta property="og:title" content="Posts | InvizHer">
+    <meta property="og:description" content="Explore our collection of in-depth programming tutorials, coding projects, and development resources. Learn programming concepts, access free coding materials, and enhance your development skills.">
     <meta property="og:url" content="https://invizher.com/posts">
     <meta property="og:image" content="https://invizher.com/assets/img/og-image.jpg">
-    <meta property="og:site_name" content="InvizHer">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Posts | InvizHer">
-    <meta name="twitter:description" content="Discover in-depth programming tutorials, coding resources, and development guides. Learn programming languages, best practices, and explore real-world projects.">
+    <meta name="twitter:description" content="Explore our collection of in-depth programming tutorials, coding projects, and development resources. Learn programming concepts, access free coding materials, and enhance your development skills.">
     <meta name="twitter:image" content="https://invizher.com/assets/img/og-image.jpg">
     
-    <!-- Additional SEO Meta Tags -->
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="author" content="InvizHer">
-    <meta name="copyright" content="InvizHer">
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://invizher.com/posts">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     
-    <!-- Structured Data -->
+    <!-- Article-specific Meta Tags -->
+    <meta property="article:publisher" content="https://invizher.com">
+    <meta property="article:modified_time" content="2024-01-05T00:00:00+00:00">
+    
+    <!-- Structured Data - Article List -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
+      "@type": "CollectionPage",
       "headline": "Posts | InvizHer",
-      "description": "Discover in-depth programming tutorials, coding resources, and development guides.",
-      "author": {
-        "@type": "Person",
-        "name": "InvizHer"
-      },
+      "description": "Explore our collection of in-depth programming tutorials, coding projects, and development resources.",
       "publisher": {
         "@type": "Organization",
         "name": "InvizHer",
@@ -48,25 +49,64 @@
           "url": "https://invizher.com/assets/img/inz-logo.png"
         }
       },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://invizher.com/posts"
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Programming Tutorials",
+            "description": "Learn programming concepts and development skills"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Coding Projects",
+            "description": "Explore real-world programming projects and examples"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Development Resources",
+            "description": "Access free coding materials and development guides"
+          }
+        ]
       }
     }
     </script>
-
+    
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "InvizHer",
+      "description": "Discover programming tutorials, projects and resources. Learn development concepts, checkout new projects, and access free coding materials.",
+      "url": "https://invizher.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://invizher.com/posts?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
     <!-- Existing CSS and Font imports -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/primary.css">
     <link rel="stylesheet" href="../assets/css/secondary.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+    
     <!-- Additional SEO-friendly elements -->
     <link rel="alternate" type="application/rss+xml" title="InvizHer Blog RSS Feed" href="https://invizher.com/feed.xml">
-    <meta name="theme-color" content="#3B82F6">
     
     <!-- Preload critical assets -->
     <link rel="preload" as="image" href="../assets/img/inz-logo.png">
