@@ -77,27 +77,27 @@
     </div>
 
     <!-- Enhanced Header -->
-    <header class="fixed w-full z-50 transition-all duration-300" id="header">
+    <header class="fixed w-full z-50 transition-all duration-300" id="header" role="banner">
         <nav class="glass mx-4 my-4 rounded-2xl">
             <div class="container mx-auto px-6 py-4">
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
-                    <a href=".." class="flex items-center space-x-4">
+                    <a href="../" class="flex items-center space-x-4">
                         <div class="relative w-8 h-8">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg"></div>
                             <img src="../assets/img/inz-logo.png" alt="Logo" class="relative w-full h-full rounded-lg object-cover">
                         </div>
-                        <span class="text-xl font-bold gradient-text">InvizHer</span>
+                        <h1 class="text-xl font-bold gradient-text" title="InvizHer">InvizHer</h1>
                     </a>
 
                     <!-- Desktop Navigation -->
-                    <div class="hidden lg:flex items-center space-x-8">
-                        <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
+                    <div class="hidden lg:flex items-center space-x-8" role="menu">
+                        <a href="../" class="text-gray-700 hover:text-blue-500 transition-colors">Home</a>
                         <a href="../posts/" class="text-gray-700 hover:text-blue-500 transition-colors">Posts</a>
+                        <a href="../projects.html" class="text-gray-700 hover:text-blue-500 transition-colors">Projects</a>
                         <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors">Languages</a>
                         <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors">Categories</a>
-                        <a href="about.html" class="text-gray-700 hover:text-blue-500 transition-colors">About</a>
-                        <a href="contact.html" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
+                        <a href="../pages/contact.html" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
                             Contact Me
                         </a>
                     </div>
@@ -124,20 +124,77 @@
         </nav>
 
         <!-- Enhanced Mobile Menu -->
-        <div class="lg:hidden hidden" id="mobile-menu">
-            <div class="bg-white mx-4 mt-2 p-6 rounded-2xl">
-                <nav class="flex flex-col space-y-4">
-                    <a href=".." class="text-gray-700 hover:text-blue-500 transition-colors py-2">Home</a>
-                    <a href="../posts/" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Posts</a>
-                    <a href="../languages.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Languages</a>
-                    <a href="../categories.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">Categories</a>
-                    <a href="about.html" class="text-gray-700 hover:text-blue-500 transition-colors py-2">About</a>
-                    <a href="contact.html" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:opacity-90 transition-opacity">
-                        Contact Me
-                    </a>
-                </nav>
-            </div>
-        </div>
+<div class="lg:hidden hidden" id="mobile-menu" role="menu">
+    <div class="bg-white mx-6 mt-2 p-6 px-4 rounded-xl">
+        <nav class="flex flex-col space-y-4">
+            <!-- Home -->
+            <a href="../" class="flex items-center space-x-4 p-3 glass rounded-xl hover:bg-gray-50 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-95 transition-transform">
+                    <i class="fas fa-home gradient-text text-sm"></i>
+                </div>
+                <div class="flex-1 pl-2">
+                    <span class="font-medium text-gray-700">Home</span>
+                    <p class="text-sm text-gray-500">Go to homepage</p>
+                </div>
+                
+            </a>
+
+            <!-- Posts -->
+            <a href="../posts/" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-gray-50 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-95 transition-transform">
+                    <i class="fas fa-newspaper gradient-text text-sm"></i>
+                </div>
+                <div class="flex-1 pl-2">
+                    <span class="font-medium text-gray-700">Posts</span>
+                    <p class="text-sm text-gray-500">articles & tutorials</p>
+                </div>
+                
+            </a>
+
+            <!-- Projects -->
+            <a href="../projects.html" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-gray-50 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-95 transition-transform">
+                    <i class="fas fa-project-diagram gradient-text text-sm"></i>
+                </div>
+                <div class="flex-1 pl-2">
+                    <span class="font-medium text-gray-700">Projects</span>
+                    <p class="text-sm text-gray-500">Explore all projects</p>
+                </div>
+                
+            </a>
+
+            <!-- Languages -->
+            <a href="../languages.html" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-gray-50 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-95 transition-transform">
+                    <i class="fas fa-code gradient-text text-sm"></i>
+                </div>
+                <div class="flex-1 pl-2">
+                    <span class="font-medium text-gray-700">Languages</span>
+                    <p class="text-sm text-gray-500">Programming languages</p>
+                </div>
+                
+            </a>
+
+            <!-- Categories -->
+            <a href="../categories.html" class="flex items-center space-x-4 p-3 rounded-xl hover:bg-gray-50 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-95 transition-transform">
+                    <i class="fas fa-th-large gradient-text text-sm"></i>
+                </div>
+                <div class="flex-1 pl-2">
+                    <span class="font-medium text-gray-700">Categories</span>
+                    <p class="text-sm text-gray-500">Browse categories</p>
+                </div>
+                
+            </a>
+
+            <!-- Contact -->
+            <a href="../pages/contact.html" class="mt-6 flex items-center justify-center p-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:opacity-90 transition-opacity">
+                <i class="fas fa-envelope mr-2"></i>
+                <span>Contact Me</span>
+            </a>
+        </nav>
+    </div>
+</div>
     </header>
 
     <main class="pt-28 pb-16">
@@ -406,7 +463,6 @@
                     <ul class="space-y-2">
                         <li><a href=".." class="text-gray-400 hover:text-white transition-colors">Home</a></li>
                         <li><a href="../posts" class="text-gray-400 hover:text-white transition-colors">Posts</a></li>
-                        <li><a href="../languages.html" class="text-gray-400 hover:text-white transition-colors">Languages</a></li>
                         <li><a href="../categories.html" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
                     </ul>
                 </div>

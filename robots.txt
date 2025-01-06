@@ -1,23 +1,22 @@
 User-agent: *
+
+# Allow main sections
 Allow: /
 Allow: /posts/
 Allow: /pages/
-Allow: /assets/
 Allow: /categories.html
 Allow: /languages.html
 
-# Block access to specific folders
-Disallow: /admin/
-Disallow: /private/
+# Block sensitive directories
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/img/
 
-# Allow specific file types
-Allow: *.html
-Allow: *.css
-Allow: *.js
-Allow: *.jpg
-Allow: *.png
-Allow: *.gif
-Allow: *.svg
+# Crawl efficiency
+Crawl-delay: 1
+
+# Host directive (helps prevent content duplication)
+Host: https://invizher.in
 
 # Sitemap location
 Sitemap: https://invizher.com/sitemap.xml
